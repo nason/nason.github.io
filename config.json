@@ -5,6 +5,40 @@
     "owner": "Someone",
     "description": "Ramblings of an immor(t)al demigod"
   },
+  "home": {
+    "socials": [
+      {
+        "symbol": "&#xe086;",
+        "url": "https://twitter.com/nasonosan",
+        "color": "#0096ff",
+        "text": "I tweet"
+      },
+      {
+        "symbol": "&#xe037;",
+        "url": "https://github.com/nason",
+        "color": "#242424",
+        "text": "I code"
+      },
+      {
+        "symbol": "&#xe052;",
+        "url": "https://www.linkedin.com/in/michaelnason/",
+        "color": "#367da6",
+        "text": "Connect with me"
+      },
+      {
+        "symbol": "&#xe039",
+        "url": "https://plus.google.com/105481576429214918750",
+        "color": "#00bc66",
+        "text": "Add me to your circle"
+      },
+      {
+        "symbol": "&#xe024;",
+        "url": "mailto:michael@nason.us",
+        "color": "#778b93",
+        "text": "Email me"
+      }
+    ]
+  },
   "plugins": [
     "./plugins/paginator.coffee",
     "wintersmith-handlebars",
