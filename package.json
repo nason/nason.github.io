@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "repository": "none",
+  "devDependencies": {
+    "moment": "2.3.x",
+    "underscore": "1.4.x",
+    "typogr": "0.5.x",
+    "wintersmith-handlebars": "~0.0.3",
+    "wintersmith-stylus": "~0.4.0",
+    "grunt": "~0.4.1",
+    "bower": "~1.2.7",
+    "wintersmith": "~2.0.8",
+    "wintersmith-livereload": "~0.1.0"
+  }
+}
