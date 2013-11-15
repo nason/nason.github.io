@@ -8,7 +8,8 @@
   "plugins": [
     "./plugins/paginator.coffee",
     "wintersmith-handlebars",
-    "wintersmith-stylus"
+    "wintersmith-stylus",
+    "wintersmith-browserify"
   ],
   "require": {
     "moment": "moment",
