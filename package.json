@@ -9,7 +9,6 @@
     "wintersmith-stylus": "~0.4.0",
     "grunt": "~0.4.1",
     "bower": "~1.2.7",
-    "wintersmith": "~2.0.8",
-    "wintersmith-livereload": "~0.1.0"
+    "wintersmith": "~2.0.8"
   }
 }

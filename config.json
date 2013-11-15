@@ -8,8 +8,7 @@
   "plugins": [
     "./plugins/paginator.coffee",
     "wintersmith-handlebars",
-    "Wintersmith-stylus",
-    "wintersmith-livereload"
+    "wintersmith-stylus"
   ],
   "require": {
     "moment": "moment",
