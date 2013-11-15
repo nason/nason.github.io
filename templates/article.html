@@ -1,43 +1,19 @@
-{{> header}}
-		<div id="content">
-			<div class="content-wrap">
-				<article class="article article-detail">
-					<header>
-						<p class="date"><span>{{date page.metadata.date}}</span></p>
-						<h2><a href="{{page.url}}">{{page.title}}</a></h2>
-					</header>
-					<section class="content">
+{{> html}}
+	{{> header}}
+	<div id="content">
+		<div class="content-wrap">
+			<article class="article article-detail">
+				<header>
+					<p class="date"><span>{{date page.metadata.date}}</span></p>
+					<h2><a href="{{page.url}}">{{page.title}}</a></h2>
+				</header>
+				<section class="content">
 
-						{{{typogr page.html}}}
+					{{{typogr page.html}}}
 
-					</section>
-				</article>
-
-			</div>
+				</section>
+			</article>
 		</div>
-		<footer>
-			<div class="content-wrap">
-<!-- 				<div class="nav">
-					{{#if prevPage}}
-					<a href="{{prevPage.url}}"> « Newer
-					{{else}}
-					<a href="/archive.html"> « Archives</a>
-					{{/if}}
-					{{#if nextPage}}
-					<a href="{{nextPage.url}}"> Next page »</a>
-					{{/if}}
-				</div> -->
-				<section class="about">
-					{{#with contents}}
-						{{{[about.md].html}}}
-					{{/with}}
-
-				</section>
-				<section class="copy">
-					<p>&copy; {{getYear}} {{name}} &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
-					</p>
-				</section>
-			</div>
-		</footer>
-	</body>
-</html>
+	</div>
+	{{> footer}}
+{{> close}}

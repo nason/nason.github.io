@@ -7,7 +7,7 @@ module.exports = (env, callback) ->
     template: 'home.html'
     articles: 'articles'
     filename: 'index.html'
-    blogPage: '/blog'
+    blogPage: '/blog/'
 
     # There's already a `paginator.perPage`. We don't need another
     # `home.articlesPerPage`, since the former represents the latter exactly.

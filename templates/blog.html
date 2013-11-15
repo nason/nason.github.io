@@ -1,0 +1,22 @@
+{{> html}}
+	{{> header}}
+	<div id="content">
+		<div class="content-wrap">
+			{{author contents.authors page.metadata.author}}
+			{{#each articles}}
+			<article class="article intro">
+				<header>
+					<p class="date"><span>{{date this.metadata.date}}</span></p>
+					<h2><a href="{{this.url}}">{{this.title}}</a></h2>
+				</header>
+				<section class="content">{{{this.intro}}}
+					{{#if this.hasMore}}
+					<p class="more"><a href="{{this.url}}">more</a></p>
+					{{/if}}
+				</section>
+			</article>
+			{{/each}}
+		</div>
+	</div>
+	{{> footer}}
+{{> close}}

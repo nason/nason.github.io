@@ -41,17 +41,18 @@
   },
   "plugins": [
     "./plugins/paginator.coffee",
+    "./plugins/home.coffee",
     "wintersmith-handlebars",
     "wintersmith-stylus",
     "wintersmith-browserify"
   ],
+  "shared": {
+    "articles": "articles"
+  },
   "require": {
     "moment": "moment",
     "_": "underscore",
     "typogr": "typogr"
-  },
-  "jade": {
-    "pretty": true
   },
   "markdown": {
     "smartLists": true,
@@ -59,6 +60,8 @@
   },
   "paginator": {
     "perPage": 3,
-    "template": "index.html"
+    "template": "blog.html",
+    "first": "blog/index.html",
+    "filename": "blog/page/%d/index.html"
   }
 }
