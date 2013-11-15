@@ -11,5 +11,8 @@
     "bower": "~1.2.7",
     "wintersmith": "~2.0.8",
     "wintersmith-browserify": "~0.2.3"
+  },
+  "dependencies": {
+    "nib": "~1.0.1"
   }
 }
