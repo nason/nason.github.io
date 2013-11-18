@@ -8,7 +8,7 @@ categories: Code, Hack Reactor
 comments: true
 ---
 
-I just wrapped-up my Hack Reactor group project on [Visual Stager](http://www.visualstager.com).
+I just wrapped-up my Hack Reactor group project on Visual Stager.
 
 
 We took an existing ~20,000 line codebase and dove right in, closing tickets along the way. Ultimately, we built a new feature that is now in beta. <span class="more" />
@@ -18,7 +18,7 @@ We took an existing ~20,000 line codebase and dove right in, closing tickets alo
 ## Background
 
 
-Visual Stager is a tool that helps real estate agents, or anyone selling property, quickly stage furnished scenes for prospective buyers.
+[Visual Stager](http://www.visualstager.com) is a tool that helps real estate agents, or anyone selling property, quickly stage furnished scenes for prospective buyers.
 
 It is a complex, in-production, web application that utilizes a highly customized [Backbone.js](http://backbonejs.org/) frontend MVC, [Handlebars](http://handlebarsjs.com/) templates, [Stylus](http://learnboost.github.io/stylus/) CSS preprocessing, [THREE.js](http://threejs.org/) 3D rendering, a [Node.js](http://nodejs.org/) + [Express](http://expressjs.com/) server, and a [MongoDB](http://www.mongodb.org/) database.
 
