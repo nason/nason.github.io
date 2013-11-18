@@ -1,22 +1,48 @@
 {{> html}}
-	{{> header}}
-	<div id="content">
-		<div class="content-wrap">
-			{{author contents.authors page.metadata.author}}
-			{{#each articles}}
-			<article class="article intro">
+	<section id="blog">
+		{{> pageHeader}}
+
+		<!-- Blog Header -->
+		<article class="container box style2">
 				<header>
-					<p class="date"><span>{{date this.metadata.date}}</span></p>
-					<h2><a href="{{this.url}}">{{this.title}}</a></h2>
+						<h2>Blog</h2>
 				</header>
-				<section class="content">{{{this.intro}}}
+		</article>
+
+		<!-- Blog Posts -->
+		<article class="container box style3">
+			{{#each articles}}
+			<section>
+				<header>
+					<h2><a href="{{this.url}}">{{this.title}}</a></h2>
+					<p class="date"><span>{{date this.metadata.date}}</span></p>
+				</header>
+				<section>
+					{{{typogr this.intro}}}
 					{{#if this.hasMore}}
-					<p class="more"><a href="{{this.url}}">more</a></p>
+						<p class="more"><a href="{{this.url}}">Continue reading &rarr;</a></p>
 					{{/if}}
 				</section>
-			</article>
+			</section>
+			<hr />
 			{{/each}}
-		</div>
-	</div>
-	{{> footer}}
+
+			<footer>
+				<nav class="nav">
+					{{#if prevPage}}
+						<div class="newer">
+							<a href="{{prevPage.url}}">Newer » </a>
+						</div>
+					{{/if}}
+					{{#if nextPage}}
+					<div class="older">
+						<a href="{{nextPage.url}}"> « Older</a>
+					</div>
+					{{/if}}
+				</nav>
+			</footer>
+
+		</article>
+		{{> footer}}
+	</section>
 {{> close}}

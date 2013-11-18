@@ -1,0 +1,46 @@
+// Featured homepage articles
+.blog
+  a
+    color: rgba(0,0,0,0.75);
+    text-shadow: 0 0 0.5px rgba(255,255,255,0.1875);
+    &:hover
+      color: green;
+
+// 'Visit My Blog' box on homepage
+#blog-box
+  cursor: pointer;
+  header
+    transition: all 0.35s ease-in-out;
+    border-radius: 3em;
+    h2
+      font-weight: 700;
+
+.visit-blog
+  header
+    background: rgba(52, 10, 95, 0.2) !important;
+    a
+      border-bottom: none;
+    h2
+      color: white;
+
+// Blog page
+#blog
+  background: linear-gradient(bottom, rgba(52, 10, 95, 0.8), rgba(0,0,0,0.85));
+  margin-bottom -20em;
+  .box.style2
+    margin-top: 1em;
+  .box.style2:before
+    display: none
+  .box.style2:after
+    height:1em;
+    top -1em;
+  .date
+    font-size: 0.7em;
+  .more
+    text-align: center;
+  nav
+    white-space: nowrap;
+    .newer
+      float: right;
+  img
+    max-width: 100%

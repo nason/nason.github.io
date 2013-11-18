@@ -3,37 +3,28 @@
     "url": "http://localhost:8080",
     "name": "Particles & Waves",
     "owner": "Michael Nason",
-    "description": "Words by Michael Nason"
+    "description": "by Michael Nason"
   },
   "home": {
     "socials": [
       {
-        "symbol": "&#xe086;",
-        "url": "https://twitter.com/nasonosan",
-        "color": "#0096ff",
-        "text": "I tweet"
-      },
-      {
         "symbol": "&#xe037;",
+        "class": "icon-git",
         "url": "https://github.com/nason",
         "color": "#242424",
-        "text": "I code"
+        "text": "View my code on GitHub"
       },
       {
         "symbol": "&#xe052;",
+        "class": "icon-linkedin",
         "url": "https://www.linkedin.com/in/michaelnason/",
         "color": "#367da6",
-        "text": "Connect with me"
-      },
-      {
-        "symbol": "&#xe039",
-        "url": "https://plus.google.com/105481576429214918750",
-        "color": "#00bc66",
-        "text": "Add me to your circle"
+        "text": "Connect with me on LinkedIn"
       },
       {
         "symbol": "&#xe024;",
-        "url": "mailto:michael@nason.us",
+        "class": "icon-mail",
+        "url": "/contact/",
         "color": "#778b93",
         "text": "Email me"
       }

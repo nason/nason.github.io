@@ -12,6 +12,7 @@
     "wintersmith-browserify": "~0.2.3"
   },
   "dependencies": {
-    "nib": "~1.0.1"
+    "nib": "~1.0.1",
+    "jqueryify": "~2.0.3"
   }
 }

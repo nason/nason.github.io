@@ -1,8 +1,9 @@
 ---
 title: README
-author: the-wintersmith
+author: msn
 date: 2013-04-30
 template: article.html
+thumb: pic01.jpg
 ---
 
 Welcome to your new blog! This is the default blog template with RSS, pagination and an archive. There are other templates available -- run `wintersmith new --help` to list them.

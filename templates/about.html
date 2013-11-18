@@ -1,13 +1,14 @@
 {{> html}}
-	<main id="post">
+	<main id="page">
 		{{> pageHeader}}
 		<article class="container box style3">
 			<header>
 				<h2><a href="{{page.url}}">{{page.title}}</a></h2>
-				<p class="date"><span>{{date page.metadata.date}}</span></p>
 			</header>
 			<section>
-				{{{typogr page.html}}}
+			  {{#with contents}}
+      		{{{typogr [about.md].html}}}
+    		{{/with}}
 			</section>
 		</article>
 		{{> footer}}

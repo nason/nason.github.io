@@ -1,0 +1,84 @@
+.box
+  z-index: 1000;
+  pseudo-arrow-before();
+  position: relative;
+  margin-top: 9em;
+  margin-bottom: 0;
+  &:last-child
+    margin-bottom: 0;
+  .image
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+.box.style1
+  pseudo-line-after(-10em, 10em);
+  background: #fff;
+  padding: 3em;
+  .image
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    img
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: auto;
+  .inner > :last-child
+    margin: 0;
+
+.box.style1.right
+  .image
+    left: 0;
+    img
+      right: 0;
+  .inner
+    margin-left: 50%;
+    padding-left: 3em;
+
+.box.style1.left
+  .image
+    right: 0;
+    img
+      left: 0;
+  .inner
+    margin-right: 50%;
+    padding-right: 3em;
+
+.box.style2
+  text-align: center;
+  pseudo-line-after(-9em, 9em);
+  header
+    display: inline-block;
+    background: #fff;
+    padding: 2em 3em 2em 3em;
+    margin: 0;
+    overflow: ellipsis;
+    p
+      padding: 0;
+  .inner
+    position: relative;
+    .row
+      position: relative;
+      &:before
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        width: calc(100% - 40px);
+        border-bottom: solid 1px #fff;
+    .image
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+
+.box.style3
+  background: #fff;
+  padding: 3em;
+  pseudo-line-after(-9.5em, 9.5em);
+  header
+    text-align: center;
