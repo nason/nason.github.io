@@ -4,6 +4,7 @@
 module.exports = (env, callback) ->
 
   defaults =
+    homePage: 'true'
     template: 'home.html'
     articles: 'articles'
     filename: 'index.html'
@@ -41,7 +42,9 @@ module.exports = (env, callback) ->
         return callback new Error "unknown template '#{ options.template }'"
 
       ctx =
+        homePage: true
         env: env
+
         contents: contents
         articles: @articles.slice 0, options.articlesPerPage
 

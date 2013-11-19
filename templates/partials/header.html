@@ -1,5 +1,6 @@
 <!-- Header -->
-<section id="header">
+<section id="{{#unless homePage}}page-{{/unless}}header">
+
   <header>
     <h1><a href="/">{{name}}</a></h1>
     <p>{{description}}</p>
@@ -9,7 +10,11 @@
         <li><a href="#contact" class="icon-mail scrolly"></a></li>
     </ul>
   </header>
+
+  {{#if homePage}}
   <footer>
     <a href="#intro" class="button style2 scrolly"><strong>Proceed</strong> &crarr;</a>
   </footer>
+  {{/if}}
+
 </section>
