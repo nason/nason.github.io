@@ -1,0 +1,49 @@
+form
+
+form label
+  display: block;
+  margin: 0 0 0.5em 0;
+
+
+form input.button,
+form input.text,
+form select,
+form textarea
+  -webkit-appearance: none;
+  display: block;
+  border: 0;
+  background: #f5f5f5;
+  width: 100%;
+  padding: 0.75em;
+  transition: background-color 0.35s ease-in-out;
+
+form input.text:focus,
+form select:focus,
+form textarea:focus
+  background: #f2f2f2;
+
+form textarea
+  min-height: 12em;
+
+form ::-webkit-input-placeholder
+  color: #5a5959 !important;
+
+form :-moz-placeholder
+  color: #5a5959 !important;
+
+form ::-moz-placeholder
+  color: #5a5959 !important;
+
+form :-ms-input-placeholder
+  color: #5a5959 !important;
+
+form ::-moz-focus-inner
+  border: 0;
+
+form input.text,
+form select
+  line-height: 1em;
+
+form ul.actions
+  margin-bottom: 0;
+  text-align: center;
