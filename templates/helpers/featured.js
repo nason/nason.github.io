@@ -2,13 +2,7 @@
 
 module.exports = function(articles) {
   if (articles.length >= 2) {
-
-    var top = buildTop(articles[0]);
-
-
-    var bottom = buildBottom(articles[1]);
-
-    return top + bottom;
+    return buildTop(articles[0]) + buildBottom(articles[1]);
   }
 
 }
