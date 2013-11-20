@@ -5,7 +5,7 @@ module.exports = (env, callback) ->
 
   defaults =
     homePage: 'true'
-    template: 'home.html'
+    template: 'home.hbs'
     articles: 'articles'
     filename: 'index.html'
     blogPage: '/blog/'

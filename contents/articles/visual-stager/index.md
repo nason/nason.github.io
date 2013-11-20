@@ -2,7 +2,7 @@
 title: Visual Stager Group Project
 author: Michael Nason
 date: 2013-10-23
-template: article.html
+template: article.hbs
 thumb: vs_surface_item_height_change.gif
 categories: Code, Hack Reactor
 comments: true

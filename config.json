@@ -52,7 +52,7 @@
   },
   "paginator": {
     "perPage": 3,
-    "template": "blog.html",
+    "template": "blog.hbs",
     "first": "blog/index.html",
     "filename": "blog/page/%d/index.html"
   },

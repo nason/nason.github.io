@@ -2,7 +2,7 @@
 title: 'Ditching Wordpress'
 author: Michael Nason
 date: 2013-11-17
-template: article.html
+template: article.hbs
 thumb: company_settings.png
 categories: Code, Personal
 comments: true

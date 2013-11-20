@@ -2,7 +2,7 @@
 title: 'Bridgely: Text Messaging for Corporations'
 author: Michael Nason
 date: 2013-10-18
-template: article.html
+template: article.hbs
 thumb: vs_surface_item_height_change.gif
 categories: Code
 comments: true

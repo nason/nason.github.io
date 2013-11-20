@@ -1,5 +1,5 @@
 {
-  "template": "about.html",
+  "template": "about.hbs",
   "filename": "about/index.html",
   "title": "About"
 }
