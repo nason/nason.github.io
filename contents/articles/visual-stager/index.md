@@ -6,12 +6,14 @@ template: article.html
 thumb: vs_surface_item_height_change.gif
 categories: Code, Hack Reactor
 comments: true
+
 ---
+
 
 I just wrapped-up my Hack Reactor group project on Visual Stager.
 
 
-We took an existing ~20,000 line codebase and dove right in, closing tickets along the way. Ultimately, we built a new feature that is now in beta. <span class="more" />
+We took an existing ~20,000 line codebase and dove right in, closing tickets along the way. Ultimately, we built a new feature that is now in beta. <span class="more" />
 
 ![Visual Stager Logo](visual-stager-logo.gif)
 
@@ -46,11 +48,13 @@ This is the essence of my primary contribution to Visual Stager. So much more is
 
 Rest assured, this was not as simple as anything like:
 
-[js]item.y += mouse.y;[/js]
+``` javascript
+item.y += mouse.y;
+```
 
 This behavior involves complex math, tweaked to improve perceived experience, and firing lots of rays(!). This behavior works via either touch or click, and in combination with other behaviors,  in real-time.
 
-I can't go into more detail due to to the company's proprietary technology, but I will do my best to entertain any [inquiries via email](http://nason.us/contact/). Needless to say, I learned an incredible amount while working on this particular issue.
+I can't go into more detail due to to the company's proprietary technology, but I will do my best to entertain any [inquiries via email](http://nason.us/#contact/). Needless to say, I learned an incredible amount while working on this particular issue.
 
 
 ### Workflow Automation
@@ -74,7 +78,7 @@ Collectively our team closed around 20 issues during the project period, before 
 ## Tours
 
 
-**My team built a sharable tour module that Visual Stager users can send to prospective property buyers. **It is a cross-browser compatible, touch enabled & responsively designed carousel of scene photos on the main axis, with scene variations on the y-axis.
+**My team built a sharable tour module that Visual Stager users can send to prospective property buyers.** It is a cross-browser compatible, touch enabled & responsively designed carousel of scene photos on the main axis, with scene variations on the y-axis.
 
 Our main challenges while building this feature involved creating a custom data structure and an animation algorithm to power the view. It is still in beta, and should be pushed to production in the near future.
 
