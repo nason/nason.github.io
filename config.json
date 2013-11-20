@@ -3,7 +3,8 @@
     "url": "http://localhost:8080",
     "name": "Particles & Waves",
     "owner": "Michael Nason",
-    "description": "by Michael Nason"
+    "description": "by Michael Nason",
+    "feedPath": "/feed.xml"
   },
   "home": {
     "socials": [
