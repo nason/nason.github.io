@@ -1,5 +1,5 @@
-var $ = jQuery = require('jqueryify');
-var skel = require('./skel.min.js');
+var $ = jQuery = require('jqueryify'),
+	skel = require('./skel.min.js');
 
 /*
 	Overflow 1.1 by HTML5 UP
