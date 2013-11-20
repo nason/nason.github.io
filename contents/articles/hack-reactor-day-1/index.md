@@ -1,6 +1,6 @@
 ---
 title: Hack Reactor Day 1
-author: msn
+author: Michael Nason
 date: 2013-08-05
 template: article.html
 thumb: vs_surface_item_height_change.gif

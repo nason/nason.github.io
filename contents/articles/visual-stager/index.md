@@ -1,6 +1,6 @@
 ---
 title: Visual Stager Group Project
-author: msn
+author: Michael Nason
 date: 2013-10-23
 template: article.html
 thumb: vs_surface_item_height_change.gif

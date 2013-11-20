@@ -1,6 +1,6 @@
 ---
 title: 'Ditching Wordpress'
-author: msn
+author: Michael Nason
 date: 2013-11-17
 template: article.html
 thumb: company_settings.png
