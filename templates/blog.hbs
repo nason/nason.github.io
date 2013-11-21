@@ -14,13 +14,13 @@
 			{{#each articles}}
 			<section>
 				<header>
-					<h2><a href="{{this.url}}">{{this.title}}</a></h2>
-					<p class="date"><span>{{date this.metadata.date}}</span></p>
+					<h2><a href="{{url}}">{{title}}</a></h2>
+					<p class="date"><span>{{date metadata.date}}</span></p>
 				</header>
 				<section>
 					{{{typogr this.intro}}}
-					{{#if this.hasMore}}
-						<p class="more"><a href="{{this.url}}">Continue reading &rarr;</a></p>
+					{{#if hasMore}}
+						<p class="more"><a href="{{url}}">Continue reading &rarr;</a></p>
 					{{/if}}
 				</section>
 			</section>
