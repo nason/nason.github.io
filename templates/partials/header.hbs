@@ -1,7 +1,20 @@
 <!-- Header -->
 <section id="{{#unless homePage}}page-{{/unless}}header">
 
+  {{#if homePage}}
+  <nav>
+    <ul class="actions">
+        <li><a href="{{#unless homePage}}/blog/{{else}}#first" class="scrolly{{/unless}}">blog</a></li>
+        <li><a href="{{#unless homePage}}/about/{{else}}#intro" class="scrolly{{/unless}}">about</a></li>
+        <li><a href="{{#unless homePage}}/{{/unless}}#contact" class="scrolly">contact</a></li>
+    </ul>
+  </nav>
+  {{/if}}
+
   <header>
+    {{#with page}}
+      <p>{{#if markdown}}Blog{{else}}{{title}}{{/if}}</p>
+    {{/with}}
     <h1><a href="/">{{name}}</a></h1>
     <p>{{description}}</p>
     <ul class="icons">

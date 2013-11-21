@@ -1,5 +1,6 @@
 <!-- Footer -->
 <footer id="footer">
+  {{#if page.markdown}}<div class="article-footer-bg-overlay">{{/if}}
   <section class="about container">
     {{#with contents}}
       {{{typogr [footer-text.md].html}}}
@@ -12,4 +13,5 @@
           <li>Design adapted from Overflow by <a href="http://html5up.net/">HTML5 UP</a></li>
       </ul>
   </section>
+  {{#if page.markdown}}</div>{{/if}}
 </footer>
