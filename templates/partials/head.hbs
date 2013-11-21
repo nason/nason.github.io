@@ -1,5 +1,5 @@
 <head>
-    <title>{{ name }}</title>
+    <title>{{#if page}}{{page.title}} | {{/if}}{{ name }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -8,11 +8,11 @@
     <meta name="keywords" content="{{ keywords }}">
     <link rel="alternate" href="{{ url }}{{ feedPath }}" type="application/rss+xml" title="{{ name }}">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
     <script src="/js/init.js"></script>
     <noscript>
         <link rel="stylesheet" href="/css/skel-noscript.css" />
         <link rel="stylesheet" href="/css/main.css" />
     </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 </head>
