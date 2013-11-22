@@ -3,13 +3,11 @@
   "repository": "none",
   "devDependencies": {
     "moment": "2.3.x",
-    "underscore": "1.4.x",
     "typogr": "0.5.x",
     "wintersmith-handlebars": "tnguyen14/wintersmith-handlebars",
     "wintersmith-stylus": "~0.4.0",
-    "bower": "~1.2.7",
-    "wintersmith": "~2.0.8",
-    "wintersmith-browserify": "~0.2.3"
+    "wintersmith-browserify": "~0.2.3",
+    "wintersmith": "~2.0.8"
   },
   "dependencies": {
     "nib": "~1.0.1",

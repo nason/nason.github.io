@@ -1,5 +1,6 @@
 var $ = jQuery = require('jqueryify'),
-	skel = require('./skel.min.js');
+	skel = require('./skel.min.js'),
+	http = require('http');
 
 /*
 	Overflow 1.1 by HTML5 UP
@@ -138,6 +139,37 @@ jQuery(function() {
 				e.preventDefault();
 				$banner.removeClass('about-me-hover');
 			});
+		}
+
+	// Email Form
+		var $form = $('form#email');
+		if ($form.length) {
+			var $button = $form.find('.button');
+			$button.on('click', function(e) {
+				e.preventDefault();
+
+				var req = http.request({
+					method: 'POST',
+					host : 'localhost',
+					port: 8080,
+					path: '/about/'
+				}, function(res) {
+
+					var result = '';
+					res.on('data', function(chunk) {
+						result += chunk;
+					}).on('end', function() {
+						console.log(result);
+					})
+
+				}).on('error', function(error) {
+					console.log('error', error)
+				})
+
+				// req.write();
+				req.end();
+			});
+
 		}
 
 });
