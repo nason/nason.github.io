@@ -1,7 +1,3 @@
-/*
-  TODO: Clean me up, DRY me out
-*/
-
 @charset 'UTF-8';
 
 html, body
@@ -13,8 +9,8 @@ body,input,textarea,select
   line-height: 1.75em;
   font-weight: 300;
   letter-spacing: 1px;
-  color: #3a3939;
-  text-shadow: 0 0 0.5px rgba(58,57,57,0.25);
+  color: $text-color;
+  text-shadow: 0 0 0.5px $text-color-25;
   -webkit-text-stroke: 0.25px;
 
   /* Enable Ligatures ================ */
@@ -34,10 +30,9 @@ h1,h2,h3,h4,h5,h6
   font-weight: 400;
   text-transform: uppercase;
   line-height: 1.75em;
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
-  color: inherit;
-  text-decoration: none;
+  a
+    color: inherit;
+    text-decoration: none;
 
 h2
   font-size: 1.25em;
@@ -54,13 +49,13 @@ em, i
   font-style: italic;
 
 a
-  color: #35b88f;
-  text-shadow: 0 0 0.5px rgba(53,184,143,0.25);
+  color: $button-darker-color;
+  text-shadow: 0 0 0.5px $button-darker-color-25;
   transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
   text-decoration: none;
-  border-bottom: dotted 1px rgba(53,184,143,0.5);
+  border-bottom: dotted 1px $button-darker-color-50;
   &:hover
-    border-bottom-color: rgba(53,184,143,0);
+    border-bottom-color: $clear;
 
 sub
   position: relative;
@@ -74,11 +69,11 @@ sup
 
 hr
   border: 0;
-  border-top: solid 1px #dad9d9;
+  border-top: solid 1px $grey;
   margin: 2em 0 2em 0;
 
 blockquote
-  border-left: solid 0.5em #eae9e9;
+  border-left: solid 0.5em $light-grey;
   padding: 1em 0 1em 2em;
   font-style: italic;
 
@@ -102,23 +97,18 @@ br.clear
 /* Transparent Overlay */
 
 .transparent-overlay
-  background-color: rgba(53, 184, 143, 0.6);
-  background: linear-gradient(top, rgba(53, 184, 143, 0.6), rgba(0,0,0,0.9));
+  background-color: $button-darker-color-60;
+  background: linear-gradient(top, $button-darker-color-60, $black-90);
 
 /* Sections/Articles */
 
 section,
 article
   margin-bottom: 3em;
-
-section > :last-child,
-article > :last-child
-  margin-bottom: 0;
-
-
-section:last-child,
-article:last-child
-  margin-bottom: 0;
+  & > :last-child
+    margin-bottom: 0;
+  &:last-child
+    margin-bottom: 0;
 
 .row > section,
 .row > article

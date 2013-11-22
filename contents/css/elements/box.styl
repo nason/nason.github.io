@@ -12,8 +12,8 @@
     background-position: 50% 50%;
 
 .box.style1
-  pseudo-line-after(-10em, 10em);
-  background: #fff;
+  pseudo-line-after(10);
+  background: $white;
   padding: 3em;
   .image
     display: block;
@@ -21,7 +21,7 @@
     top: 0;
     width: 50%;
     height: 100%;
-    background-color: white;
+    background-color: $white;
     img
       position: absolute;
       top: 0;
@@ -50,10 +50,10 @@
 
 .box.style2
   text-align: center;
-  pseudo-line-after(-9em, 9em);
+  pseudo-line-after(9);
   header
     display: inline-block;
-    background: #fff;
+    background: $white;
     padding: 2em;
     margin: 0;
     overflow: ellipsis;
@@ -71,15 +71,15 @@
         top: 50%;
         left: 20px;
         width: calc(100% - 40px);
-        border-bottom: solid 1px #fff;
+        border-bottom: solid 1px $white;
     .image
       position: relative;
       z-index: 1;
       padding: 20px;
 
 .box.style3
-  background: #fff;
+  background: $white;
   padding: 3em;
-  pseudo-line-after(-9.5em, 9.5em);
+  pseudo-line-after(9.5);
   header
     text-align: center;

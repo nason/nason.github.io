@@ -1,7 +1,7 @@
 #footer
   position: relative;
-  color: #fff;
-  text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+  color: $white;
+  text-shadow: 0 0 0.5px $white-25;
   text-align: center;
   margin: 4.5em 0 0 0;
   &:before
@@ -9,16 +9,16 @@
     display: block;
     position: absolute;
     left: 50%;
-    border-left: solid 1px #fff;
+    border-left: solid 1px $white;
 
   a
-    color: #35b88f;
-    text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
-    border-bottom-color: rgba(255,255,255,0.5);
+    color: $button-color;
+    text-shadow: 0 0 0.5px $white-25;
+    border-bottom-color: $white-50;
     &:hover
-      color: white;
-      text-shadow: 0 0 0.5px rgba(69,200,159,0.25);
-      border-bottom-color: rgba(53,184,143,0.5);
+      color: $white;
+      text-shadow: 0 0 0.5px $button-hover-color-25;
+      border-bottom-color: $button-darker-color-50;
 
   .copyright
     margin: 0;

@@ -3,7 +3,6 @@ title: 'Bridgely: Text Messaging for Corporations'
 author: Michael Nason
 date: 2013-10-18
 template: article.hbs
-thumb: vs_surface_item_height_change.gif
 categories: Code
 comments: true
 ---
@@ -12,7 +11,7 @@ comments: true
 
 They encountered a bit of a roadblock distributing their content at companies they work with: HR departments often don't have accurate or up-to-date employee email addresses or mobile phone numbers.
 
-![bridgely_logo](http://nason.us/content/uploads/2013/10/bridgely_logo.png)
+![bridgely_logo](bridgely_logo.png)
 
 I teamed up with ForUs to develop an open-source tool, [Bridgely](https://github.com/nason/bridgely), that helps bridge this gap and enables companies to deliver content to employees via text messaging.
 <span class="more" />
@@ -74,17 +73,9 @@ Companies can send messages to any number of employees. Employees can be selecte
 
 When composing a new message in Bridgely, a few variables are available:
 
-
-
-  
-  * Unique welcome link (the same one that was sent in the autoresponder, if enabled)
-
-  
-  * Company name
-
-  
-  * Employee's first name
-
+* Unique welcome link (the same one that was sent in the autoresponder, if enabled)
+* Company name
+* Employee's first name
 
 Using the recipient's name in a message is a nice touch that helps the communications seem less robotic and more personal.
 
@@ -110,16 +101,9 @@ The Bridgely backend is a RESTful Rails 4 API. It uses the rails-api gem to keep
 
 The API has three main types of functionality:
 
-
-
-  
-  1. Serving JSON data to the frontend
-
-  
-  2. Receiving and sending message data to Twilio
-
-  
-  3. Maintaining a database of all messages, employees, and employee response data
+1. Serving JSON data to the frontend
+2. Receiving and sending message data to Twilio
+3. Maintaining a database of all messages, employees, and employee response data
 
 
 More information about the Bridgely API can be found on GitHub at [https://github.com/nason.bridgely-api](https://github.com/nason.bridgely-api)
