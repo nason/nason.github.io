@@ -17,6 +17,7 @@
 				<header>
 					<h2><a href="{{url}}">{{title}}</a></h2>
 					<p class="date"><span>{{date metadata.date}}</span></p>
+					{{#if metadata.thumb}}<a class="blog-thumb" href="{{url}}"><img src="{{url}}{{metadata.thumb}}" /></a>{{/if}}
 				</header>
 				<section>
 					{{{typogr intro}}}
