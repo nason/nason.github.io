@@ -1,6 +1,5 @@
 var $ = jQuery = require('jqueryify'),
-	skel = require('./skel.min.js'),
-	http = require('http');
+	skel = require('./skel.min.js');
 
 /*
 	Overflow 1.1 by HTML5 UP
@@ -141,35 +140,24 @@ jQuery(function() {
 			});
 		}
 
-	// Email Form
+		// Contact Form
 		var $form = $('form#email');
 		if ($form.length) {
 			var $button = $form.find('.button');
 			$button.on('click', function(e) {
 				e.preventDefault();
-
-				var req = http.request({
-					method: 'POST',
-					host : 'localhost',
-					port: 8080,
-					path: '/about/'
-				}, function(res) {
-
-					var result = '';
-					res.on('data', function(chunk) {
-						result += chunk;
-					}).on('end', function() {
-						console.log(result);
-					})
-
-				}).on('error', function(error) {
-					console.log('error', error)
-				})
-
-				// req.write();
-				req.end();
+				$form.submit();
 			});
 
+			// Contact form error handling
+			if (window.location.pathname === "/" && window.location.hash === "#contact-error") {
+				$('#contact-error').show();
+				console.log('show')
+			} else {
+				$('#contact-error').hide();
+				console.log('hide')
+			}
 		}
+
 
 });

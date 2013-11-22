@@ -1,0 +1,20 @@
+{{> html}}
+	<main id="page">
+		{{> header}}
+		<article class="container box style3">
+			<section>
+			  {{#with contents}}
+      		{{{typogr [success.md].html}}}
+    		{{/with}}
+			</section>
+		</article>
+
+		<!-- Back to Homepage Box -->
+		<article class="container box style2">
+			<header>
+				<h2><a href="/">&larr; Return to Homepage</a></h2>
+			</header>
+		</article>
+		{{> footer}}
+	</main>
+{{> close}}
