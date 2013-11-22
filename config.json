@@ -6,31 +6,6 @@
     "description": "by Michael Nason",
     "feedPath": "/feed.xml"
   },
-  "home": {
-    "socials": [
-      {
-        "symbol": "&#xe037;",
-        "class": "icon-git",
-        "url": "https://github.com/nason",
-        "color": "#242424",
-        "text": "View my code on GitHub"
-      },
-      {
-        "symbol": "&#xe052;",
-        "class": "icon-linkedin",
-        "url": "https://www.linkedin.com/in/michaelnason/",
-        "color": "#367da6",
-        "text": "Connect with me on LinkedIn"
-      },
-      {
-        "symbol": "&#xe024;",
-        "class": "icon-mail",
-        "url": "/contact/",
-        "color": "#778b93",
-        "text": "Email me"
-      }
-    ]
-  },
   "plugins": [
     "./plugins/paginator.coffee",
     "./plugins/home.coffee",
@@ -43,7 +18,6 @@
   },
   "require": {
     "moment": "moment",
-    "_": "underscore",
     "typogr": "typogr"
   },
   "markdown": {
