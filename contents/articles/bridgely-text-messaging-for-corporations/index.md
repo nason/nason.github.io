@@ -11,7 +11,7 @@ comments: true
 
 They encountered a bit of a roadblock distributing their content at companies they work with: HR departments often don't have accurate or up-to-date employee email addresses or mobile phone numbers.
 
-![bridgely_logo](http://nason.us/content/uploads/2013/10/bridgely_logo.png)
+![bridgely_logo](bridgely_logo.png)
 
 I teamed up with ForUs to develop an open-source tool, [Bridgely](https://github.com/nason/bridgely), that helps bridge this gap and enables companies to deliver content to employees via text messaging.
 <span class="more" />

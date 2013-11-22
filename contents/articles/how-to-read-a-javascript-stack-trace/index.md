@@ -3,7 +3,7 @@ title: How to Read a JavaScript Stack Trace
 author: Michael Nason
 date: 2013-10-09
 template: article.hbs
-thumb: vs_surface_item_height_change.gif
+thumb: callstack.png
 categories: Code, Hack Reactor
 comments: true
 ---

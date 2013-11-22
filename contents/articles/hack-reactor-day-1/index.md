@@ -3,7 +3,7 @@ title: Hack Reactor Day 1
 author: Michael Nason
 date: 2013-08-05
 template: article.hbs
-thumb: vs_surface_item_height_change.gif
+thumb: hr_logo.png
 categories: Personal, Hack Reactor
 comments: true
 ---

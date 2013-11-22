@@ -3,7 +3,7 @@ title: On Learning Ruby
 author: Michael Nason
 date: 2013-10-06
 template: article.hbs
-thumb: vs_surface_item_height_change.gif
+thumb: ruby_logo.png
 categories: Code, Hack Reactor
 comments: true
 ---
