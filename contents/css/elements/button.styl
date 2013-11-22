@@ -2,33 +2,33 @@
   position: relative;
   display: inline-block;
   border: 0;
-  background: #35b88f;
-  color: #fff;
-  text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+  background: $button-darker-color;
+  color: $white;
+  text-shadow: 0 0 0.5px $white-25;
   cursor: pointer;
   text-decoration: none;
   outline: 0;
-  padding: 1em 3em 1em 3em;
+  padding: 1em 3em;
   text-align: center;
   border-radius: 3em;
   font-weight: 400;
   white-space: nowrap;
   transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
   &:hover
-    background: #45c89f;
+    background: $button-hover-color;
 
 .button.style2
-  color: #3a3939;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px #fff;
+  color: $text-color;
+  background: $white;
+  box-shadow: inset 0 0 0 1px $white;
   &:hover
-    background: rgba(255,255,255,0.1);
-    color: #fff !important;
-    text-shadow: 0 0 0.5px rgba(255,255,255,0.25) !important;
+    background: $white-10;
+    color: white !important;
+    text-shadow: 0 0 0.5px $white-25 !important;
 
 .button.style3
   background: none;
-  color: #3a3939;
-  box-shadow: inset 0 0 0 1px #dad9d9;
+  color: $text-color;
+  box-shadow: inset 0 0 0 1px $grey;
   &:hover
-    background: rgba(58,57,57,0.025);
+    background: $text-color-1-40;

@@ -1,18 +1,18 @@
 #banner
   position: relative;
-  color: #fff;
-  text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+  color: $white;
+  text-shadow: 0 0 0.5px $white-25;
   text-align: center;
   font-size: 1.1em;
-  background: rgba(3, 184, 193, 1) url('../images/banner.svg') bottom center no-repeat;
-  padding: 5em 0 5em 0;
+  background: $green-banner-background url('../images/banner.svg') bottom center no-repeat;
+  padding: 5em 0;
   margin: 0;
   background-size: 125% auto;
   transition: background-color 0.35s ease-in-out;
 
   .button
-    color: #35b882;
-    text-shadow: 0 0 0.5px rgba(53,184,130,0.25);
+    color: $button-color;
+    text-shadow: 0 0 0.5px $button-hover-color-25;
 
   .row
     img
@@ -37,9 +37,9 @@
     margin: 0;
   a
     color: inherit;
-    border-bottom-color: rgba(255,255,255,0.5);
+    border-bottom-color: $white-50;
     &:hover
-      border-bottom-color: rgba(255,255,255,0);
+      border-bottom-color: $clear;
 
 .about-me-hover
-  background-color: rgba(238, 9, 37, 0.4) !important;
+  background-color: $red-40 !important;
