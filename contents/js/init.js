@@ -1,4 +1,4 @@
-var $ = jQuery = require('jqueryify'),
+var $ = jQuery = require('./jquery.min.js'),
 	skel = require('./skel.min.js');
 
 /*
