@@ -1,0 +1,19 @@
+{
+  "name": "Particles & Waves",
+  "version": "0.0.1",
+  "authors": [
+    "nason <michael@nason.us>"
+  ],
+  "description": "Michael Nason's Personal Site",
+  "license": "MIT",
+  "homepage": "nason.us",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}
