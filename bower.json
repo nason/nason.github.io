@@ -15,5 +15,9 @@
     "app/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "zepto": "~1.0.0"
+  }
 }
