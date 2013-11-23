@@ -1,10 +1,3 @@
----
-author: Michael Nason
-comments: false
-date: 2013-08-11
-type: page
----
-
 ### Particles & Waves is the personal site of Michael Nason
 
 > “I love connecting the dots between different aspects of development. I learned Rails for a personal project and found it easy to draw similarities to Node.js and Express, as well as the JavaScript environment I’m most familiar with.”

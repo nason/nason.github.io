@@ -1,10 +1,3 @@
----
-author: Michael Nason
-comments: false
-date: 2013-08-11
-type: page
----
-
 ## Thank you!
 
 *Your message has been sent, and I will get back to you shortly.*

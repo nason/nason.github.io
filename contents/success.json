@@ -1,5 +1,6 @@
 {
-  "template": "success.hbs",
+  "template": "page.hbs",
   "filename": "success/index.html",
-  "title": "Message Sent"
+  "title": "Message Sent!",
+  "content": "contact-success.md"
 }

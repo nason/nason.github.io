@@ -1,5 +1,6 @@
 {
-  "template": "about.hbs",
+  "template": "page.hbs",
   "filename": "about/index.html",
-  "title": "About"
+  "title": "About",
+  "content": "about.md"
 }

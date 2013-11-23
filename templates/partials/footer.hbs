@@ -2,7 +2,7 @@
 <footer id="footer">
   {{#if page.markdown}}<div class="article-footer-bg-overlay">{{/if}}
   <section class="about container">
-    {{#with contents}}
+    {{#with contents.copy}}
       {{{typogr [footer-text.md].html}}}
     {{/with}}
   </section>
