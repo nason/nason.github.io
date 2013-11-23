@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 
     clean: {
       build: ["build/"],
-      dist: ["dist/"]
+      dist: ["dist/"],
+      extraCSS: ["dist/css/elements/", "dist/css/pages/"]
     },
 
     imagemin: {
@@ -59,7 +60,7 @@ module.exports = function(grunt) {
         report: 'min',    //'gzip' is nice too but slows task performance by 5-10x
         preserveComments: false
       },
-      build: {
+      dist: {
         files: {
           'dist/js/home.min.js': ['build/js/home.js'],
           'dist/js/init.min.js': ['build/js/init.js'],
@@ -86,7 +87,7 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-      build: {
+      dist: {
         options: {
           // banner: '/* My minified css file */'
           report: 'gzip'
@@ -116,12 +117,12 @@ module.exports = function(grunt) {
     },
 
     git_deploy: {
-      your_target: {
+      gh_pages: {
         options: {
           url: 'git@github.com:nason/nason.github.io.git',
           message: 'Auto deploy pages'
         },
-        src: 'dist/deploy'
+        src: 'dist/'
       },
     },
 
@@ -141,9 +142,9 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['preview']);
-
-  // Wintersmith Tasks
   grunt.registerTask('preview', ['jshint:src', 'wintersmith:preview']);
-  grunt.registerTask('build', ['clean', 'jshint:src', 'wintersmith:production', 'uglify:build', 'cssmin:build', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build']);
+  grunt.registerTask('build', ['clean:build', 'jshint:src', 'wintersmith:production']);
+  grunt.registerTask('dist', ['build', 'uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
+  grunt.registerTask('deploy', ['build', 'dist', 'git_deploy:gh_pages']);
 
 };
