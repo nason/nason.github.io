@@ -5,4 +5,4 @@ module.exports = function(authors, authorName) {
 	} else {
 		return authorName;
 	}
-}
+};

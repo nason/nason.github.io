@@ -4,8 +4,7 @@ module.exports = function(articles) {
   if (articles.length >= 2) {
     return buildTop(articles[0]) + buildBottom(articles[1]);
   }
-
-}
+};
 
 var buildTop = function(article) {
     if (!article.metadata.thumb) {
@@ -23,7 +22,7 @@ var buildTop = function(article) {
             </div></a> \
         </article>';
     }
-}
+};
 
 var buildBottom = function(article) {
     if (!article.metadata.thumb) {
@@ -41,7 +40,7 @@ var buildBottom = function(article) {
             </div></a> \
         </article>'
     }
-}
+};
 
 var noPictureFeature = function(article) {
     return '<!-- Feature 2 --> \
@@ -54,4 +53,4 @@ var noPictureFeature = function(article) {
                 <p>'+ article.intro + '</p> \
             </div></a> \
         </article>';
-}
+};
