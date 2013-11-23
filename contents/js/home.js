@@ -1,4 +1,4 @@
-var $ = jQuery = require('./vendor/jquery.min.js');
+var $ = require('./components/jquery');
 var site = require('./init.js');
 
 $(function() {
