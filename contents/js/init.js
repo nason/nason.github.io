@@ -140,4 +140,24 @@ jQuery(function() {
 			});
 		}
 
+		// Contact Form
+		var $form = $('form#email');
+		if ($form.length) {
+			var $button = $form.find('.button');
+			$button.on('click', function(e) {
+				e.preventDefault();
+				$form.submit();
+			});
+
+			// Contact form error handling
+			if (window.location.pathname === "/" && window.location.hash === "#contact-error") {
+				$('#contact-error').show();
+				console.log('show')
+			} else {
+				$('#contact-error').hide();
+				console.log('hide')
+			}
+		}
+
+
 });

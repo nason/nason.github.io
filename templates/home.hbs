@@ -68,7 +68,11 @@
             <h2>Get in touch</h2>
             <p>Send me a message & I'll get back to you right away.</p>
         </header>
-        <form>
+        <header id="contact-error">
+            <h2>Oops</h2>
+            <p>There was a problem submitting your message.<br />Please make sure to fill out all three fields and try again.</p>
+        </header>
+        <form id="email" method="POST" action="https://secure.mailjol.net/allforms/u/6b72b16a.php">
             <div class="row half">
                 <div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
                 <div class="6u"><input type="email" class="text" name="email" placeholder="Email" /></div>
