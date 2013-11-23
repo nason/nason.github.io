@@ -140,10 +140,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-git-deploy');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint:src']);
+  grunt.registerTask('default', ['preview']);
 
   // Wintersmith Tasks
-  grunt.registerTask('preview', ['wintersmith:preview']);
+  grunt.registerTask('preview', ['jshint:src', 'wintersmith:preview']);
   grunt.registerTask('build', ['clean', 'jshint:src', 'wintersmith:production', 'uglify:build', 'cssmin:build', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build']);
 
 };
