@@ -1,11 +1,17 @@
-ul.default
-    list-style: disc;
+ul.default,
+ol.default
     padding-left: 2em;
     li
       padding-left: 0.65em;
       margin-top: 0.5em;
       &:first-child
         margin-top: 0;
+
+ul.default
+  list-style: disc;
+
+ol.default
+  list-style: decimal;
 
 ul.icons
     cursor: default;
@@ -40,12 +46,3 @@ ul.actions
       margin: 0 0 0 0.5em;
       &:first-child
         margin-left: 0;
-
-ol.default
-    list-style: decimal;
-    padding-left: 2em;
-    li
-      padding-left: 0.65em;
-      margin-top: 0.5em;
-      &:first-child
-        margin-top: 0;
