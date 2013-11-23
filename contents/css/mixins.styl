@@ -26,3 +26,16 @@ pseudo-line-after(size)
     left: 50%;
     border-left: solid 1px $white;
     z-index: 10;
+
+form-placeholder(color, border)
+  form
+    ::-webkit-input-placeholder
+      color: color !important;
+    :-moz-placeholder
+      color: color !important;
+    ::-moz-placeholder
+      color: color !important;
+    :-ms-input-placeholder
+      color: color !important;
+    ::-moz-focus-inner
+      border: border;

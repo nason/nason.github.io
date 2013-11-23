@@ -3,50 +3,30 @@
   background: $red-40
 
 form
+  label
+    display: block;
+    margin: 0 0 0.5em 0;
+  textarea
+    min-height: 12em;
 
-form label
-  display: block;
-  margin: 0 0 0.5em 0;
-
-
-form input.button,
 form input.text,
 form select,
 form textarea
   -webkit-appearance: none;
+  color: $black;
   display: block;
   border: 0;
-  background: $white-smoke;
+  background: $light-grey;
   width: 100%;
   padding: 0.75em;
-  transition: background-color 0.35s ease-in-out;
-
-form input.text:focus,
-form select:focus,
-form textarea:focus
-  background: $off-white;
-
-form textarea
-  min-height: 12em;
-
-form ::-webkit-input-placeholder
-  color: $dark-grey !important;
-
-form :-moz-placeholder
-  color: $dark-grey !important;
-
-form ::-moz-placeholder
-  color: $dark-grey !important;
-
-form :-ms-input-placeholder
-  color: $dark-grey !important;
-
-form ::-moz-focus-inner
-  border: 0;
-
-form input.text,
-form select
   line-height: 1em;
+  transition: background-color 0.35s ease-in-out;
+  &:focus
+    background: $white-smoke;
+
+// form input.button
+
+form-placeholder($green-alt, 0)
 
 form ul.actions
   margin-bottom: 0;
