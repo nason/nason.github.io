@@ -4,10 +4,18 @@
     background: $black-40;
   .box.style3
     margin-top: 9.5em
-    ul
-      @extends ul.default
+    ul,
     ol
-      @extends ol.default
+        padding-left: 2em;
+        li
+          padding-left: 0.65em;
+          margin-top: 0.5em;
+          &:first-child
+            margin-top: 0;
+    ul
+      list-style: disc;
+    ol
+      list-style: decimal;
 
 #post
   p
