@@ -92,7 +92,7 @@ $(function() {
     });
 
     // Contact form error handling
-    if (window.location.pathname === "/" && window.location.hash === "#contact-error") {
+    if (window.location.hash === "#contact-error") {
       $('#contact-error').show();
     } else {
       $('#contact-error').hide();
