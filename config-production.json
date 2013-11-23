@@ -1,0 +1,36 @@
+{
+  "locals": {
+    "url": "http://nason.us",
+    "name": "Particles & Waves",
+    "owner": "Michael Nason",
+    "description": "by Michael Nason",
+    "feedPath": "/feed.xml"
+  },
+  "plugins": [
+    "./plugins/paginator.coffee",
+    "./plugins/home.coffee",
+    "wintersmith-handlebars",
+    "wintersmith-stylus",
+    "wintersmith-browserify"
+  ],
+  "shared": {
+    "articles": "articles"
+  },
+  "require": {
+    "moment": "moment",
+    "typogr": "typogr"
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "perPage": 3,
+    "template": "blog.hbs",
+    "first": "blog/index.html",
+    "filename": "blog/page/%d/index.html"
+  },
+  "ignore": [
+    "**/.DS_Store"
+  ]
+}
