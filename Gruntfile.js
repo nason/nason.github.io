@@ -144,7 +144,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['preview']);
   grunt.registerTask('preview', ['jshint:src', 'wintersmith:preview']);
   grunt.registerTask('build', ['clean:build', 'jshint:src', 'wintersmith:production']);
-  grunt.registerTask('dist', ['build', 'uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
+  grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
   grunt.registerTask('deploy', ['build', 'dist', 'git_deploy:gh_pages']);
 
 };
