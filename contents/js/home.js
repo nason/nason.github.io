@@ -17,7 +17,7 @@ $(function() {
     var h = $(this).attr('href'),
         target = $(e.target);
 
-    if (h.charAt(0) == '#' && h.length > 1 && (target = $(h)).length > 0) {
+    if (h.charAt(0) === '#' && h.length > 1 && (target = $(h)).length > 0) {
       var pos = Math.max(target.offset().top, 0);
       pos -= site.skel.isActive('mobile') ? 70 : 190;
 
@@ -38,9 +38,9 @@ $(function() {
       var $header_header = $header.find('header');
 
       $window.on('resize.overflow_fsh', function() {
-        if (site.skel.isActive('mobile'))
+        if (site.skel.isActive('mobile')) {
           $header.css('padding', '');
-        else {
+        } else {
           var p = Math.max(128, ($window.height() - $header_header.outerHeight()) / 2);
           $header.css('padding', p + 'px 0 ' + p + 'px 0');
         }
@@ -64,7 +64,7 @@ $(function() {
       e.preventDefault();
       $blogBox.removeClass('visit-blog');
     }).click(function(e) {
-      e.preventDefault()
+      e.preventDefault();
       window.location=$(this).find("a").attr("href");
     });
   }
