@@ -115,6 +115,17 @@ module.exports = function(grunt) {
       }
     },
 
+    git_deploy: {
+      your_target: {
+        options: {
+          url: 'git@github.com:nason/nason.github.io.git',
+          message: 'Auto deploy pages'
+        },
+        src: 'dist/deploy'
+      },
+    },
+
+
   });
 
   // Load Grunt Plugins
@@ -126,6 +137,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-wintersmith');
+  grunt.loadNpmTasks('grunt-git-deploy');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint:src']);
