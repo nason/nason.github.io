@@ -10,9 +10,9 @@
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
     <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
     {{#if homePage}}
-    <script src="/js/home.js"></script>
+    <script src="/js/home{{#if production}}.min{{/if}}.js"></script>
     {{else}}
-    <script src="/js/init.js"></script>
+    <script src="/js/init{{#if production}}.min{{/if}}.js"></script>
     {{/if}}
     <noscript>
         <link rel="stylesheet" href="/css/skel-noscript.css" />
