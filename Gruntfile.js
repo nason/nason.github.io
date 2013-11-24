@@ -124,7 +124,8 @@ module.exports = function(grunt) {
       gh_pages: {
         options: {
           url: 'git@github.com:nason/nason.github.io.git',
-          message: "Auto deploy pages"
+          message: "Auto deploy pages",
+          branch: 'master' // Careful with this one!!!
         },
         src: 'dist/'
       },
