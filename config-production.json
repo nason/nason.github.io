@@ -1,6 +1,7 @@
 {
   "locals": {
     "production": true,
+    "analytics_id": "UA-44577443-1",
     "url": "http://nason.us",
     "name": "Particles & Waves",
     "owner": "Michael Nason",
