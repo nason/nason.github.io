@@ -57,7 +57,6 @@ ul.menu
     &:first-child
       margin-top: 0;
 
-
 ul.actions
   li
     display: block;
@@ -82,17 +81,17 @@ ol.default
   &:before
     width: 45px;
     height: 33px;
-    top: -2.25em;
-    margin-left: -22.5px;
-    margin-top: -16.5px;
-    background-size: 45px 33px;
+    top: -1.25em;
+    margin-left: -(@width/2);
+    margin-bottom: -(@height/2);
+    background-size: @width @height;
 
 .box.style1
   padding: 0;
   text-align: center;
   &:after
     top: -5em;
-    height: 5em;
+    height: -@top;
   .image
     display: inline;
     left: 0 !important;
@@ -109,7 +108,7 @@ ol.default
 .box.style2
   &:after
     top: -4.5em;
-    height: 4.5em;
+    height: -@top;
   .inner
     .row
       &:before
@@ -124,6 +123,11 @@ ol.default
   &:after
     top: -5em;
     height: 5em;
+
+#post,
+#page
+  .box.style3
+    margin-top: 5em;
 
 /*********************************************************************************/
 /* Header                                                                        */
@@ -149,14 +153,14 @@ ol.default
     &:after
       bottom: -4.5em;
       left: 50%;
-      height: 4.5em;
+      height: -@bottom;
     &:before
       width: 45px;
       height: 33px;
       bottom: -2.25em;
-      margin-left: -22.5px;
-      margin-bottom: -16.5px;
-      background-size: 45px 33px;
+      margin-left: -(@width/2);
+      margin-bottom: -(@height/2);
+      background-size: @width @height;
 
 /*********************************************************************************/
 /* Banner                                                                        */
@@ -186,8 +190,3 @@ ol.default
   .about
     column-count: 1;
     column-width: 100%;
-
-#post,
-#page
-  .box.style3
-    margin-top: 5em;
