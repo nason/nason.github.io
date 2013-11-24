@@ -4,7 +4,6 @@ site.skel = require('./vendor/skel.min.js');
 site.settings = {
 	useFullScreenHeader: true,
 	prefix: '/css/main',
-	resetCSS: true,
 	boxModel: 'border',
 	useOrientation: true,
 	containers: 1140,
