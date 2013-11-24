@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "jquery": "~2.0.3",
-    "zepto": "~1.0.0"
+    "zepto": "~1.0.0",
+    "signet": "~0.4.5"
   }
 }
