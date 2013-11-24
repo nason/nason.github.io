@@ -49,7 +49,7 @@ Now lets step it up a notch and append the form input to the page, one letter pe
 
 Here's one way you could modify the inline `script` tag to implement this behavior:
 
-```javascript
+``` javascript
 // Lets setup a funky (and broken) function that will iterate though a string, and append each letter to the page with a random color
 var displayLetters = function(string) {
   var input = string.split('');
@@ -86,7 +86,7 @@ $(function() {
 
 The code looks good, but if you try it you'll notice that something is off...This is what I saw when I entered "ABCD":
 
-[![broken_demo](http://nason.us/content/uploads/2013/10/broken_demo-136x300.png)](http://nason.us/content/uploads/2013/10/broken_demo.png)
+![broken_demo](broken_demo.png)
 
 **Uhh?**  The colors are nice and random, but there are way too many letters there! _(Note: I cropped the image, it actually went on a bit further)_
 
@@ -118,7 +118,7 @@ while( input.length ) {
 
 Now, your script will pause execution when it hits this statement. In this case, that will happen once you submit some text in the form. The **Sources** panel has all kinds of information that will help you debug this code:
 
-[![debugger](http://nason.us/content/uploads/2013/10/debugger.png)](http://nason.us/content/uploads/2013/10/debugger.png)
+[debugger](debugger.png)
 
 OK, that's a lot to take in there. Let's go through some of the components:
 
@@ -126,33 +126,18 @@ OK, that's a lot to take in there. Let's go through some of the components:
 ### DevTools Toolbar
 
 
-![devtools toolbar](http://nason.us/content/uploads/2013/10/devtools-toolbar.png)
+![devtools toolbar](devtools-toolbar.png)
 
 These are your debugger 'home keys.' Know them. Use them. They will be good to you.
 
 **The first 4 are the big ones**. From left to right they are:
 
-
-
-  
   * **Resume Execution**. This one does what it says and un-pauses your script, until the `debugger` statement is hit again.
-
-  
   * **Step Over**. Execute the current line (highlighted in blue) and proceed to the next line, but don't execute it yet.
-
-  
   * **Step In**. If the current line calls a function, step into that function in the debugger.
-
-  
   * **Step Out**. The opposite of _Step In_. Returns you to the function you stepped in _from._
-
-  
   * Ignore Breakpoints. Disables pausing on breakpoints.
-
-  
   * Ignore Exception. Disables pausing on exceptions.
-
-
 
 
 ### Fast Forward
@@ -160,7 +145,7 @@ These are your debugger 'home keys.' Know them. Use them. They will be good to y
 
 I went ahead and hit the **Resume Execution** button four times and let the debugger stop there, because that's where my script stopped behaving as intended and things get interesting. My debugger looks like so now:
 
-![callstack](http://nason.us/content/uploads/2013/10/callstack.png)
+![callstack](callstack.png)
 
 
 ### Scope Variables
@@ -186,11 +171,11 @@ Lets see, displayLetters on top there, 3 times. It is a recursive function and c
 
 So, what's wrong with our function? Let's click **Resume Execution** one more time to see where it goes wrong:
 
-![callstack2](http://nason.us/content/uploads/2013/10/callstack2.png)
+![callstack2](callstack2.png)
 
 What?! Why is nextString now "CD"? It was "D" the last time this function call hit the debugger. Let's click on the next function call in the stack and see what its scope looks like:
 
-![callstack3](http://nason.us/content/uploads/2013/10/callstack3.png)
+![callstack3](callstack3.png)
 
 Remember, this is a snapshot of what the scope was **back in time**, when this function yielded execution to another function.
 

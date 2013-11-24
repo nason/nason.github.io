@@ -62,7 +62,7 @@ I can't go into more detail due to to the company's proprietary technology, but 
 
 Visual Stager has a complex development environment and uses automation tools to keep its moving pieces active & in sync. I upgraded Visual Stager to use Grunt v0.4, which involved re-configuring watch, copy, concatenate, uglify, and compile tasks.
 
-![Grunt.js](http://gruntjs.com/img/grunt-logo.png)
+![Grunt.js](grunt-logo.png)
 
 For a project this large and complicated, automation is critical so I invested my time making sure this upgrade went smoothly and improved our development workflow.
 
