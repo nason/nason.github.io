@@ -9,6 +9,11 @@
 			<section>
 				{{{typogr page.html}}}
 			</section>
+
+			{{#if page.metadata.comments}}
+				{{> disqus}}
+			{{/if}}
+
 		</article>
 
 		<!-- Back to Blog Box -->

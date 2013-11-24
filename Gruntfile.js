@@ -82,7 +82,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'build/',
         src: '**/index.html',
-        dest: 'dist/'   // TODO: Create a deploy-preparation phase in the dist folder
+        dest: 'dist/'
       }
     },
 
