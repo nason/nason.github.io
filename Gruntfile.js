@@ -113,6 +113,10 @@ module.exports = function(grunt) {
         cwd: 'build/fonts/',
         src: ['*'],
         dest: 'dist/fonts/'
+      },
+      nojekyll: {
+        src: 'build/.nojekyll',
+        dest: 'dist/.nojekyll'
       }
     },
 
@@ -120,7 +124,7 @@ module.exports = function(grunt) {
       gh_pages: {
         options: {
           url: 'git@github.com:nason/nason.github.io.git',
-          message: 'Auto deploy pages'
+          message: "Auto deploy pages"
         },
         src: 'dist/'
       },
