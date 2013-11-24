@@ -117,6 +117,14 @@ module.exports = function(grunt) {
       nojekyll: {
         src: 'build/.nojekyll',
         dest: 'dist/.nojekyll'
+      },
+      cname: {
+        src: 'build/CNAME',
+        dest: 'dist/CNAME'
+      },
+      feed: {
+        src: 'build/feed.xml',
+        dest: 'dist/feed.xml'
       }
     },
 
