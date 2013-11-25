@@ -144,10 +144,11 @@ module.exports = function(grunt) {
         fileNameFormat: '${name}.${hash}.${ext}',
         renameFiles: true
       },
-      css: {
-        src: 'dist/**/*.css',
-        dest: 'dist/**/*.html'
-      },
+      // This wont work because of SkelJS stylesheet loading
+      // css: {
+      //   src: 'dist/**/*.css',
+      //   dest: 'dist/**/*.html'
+      // },
       js: {
         src: 'dist/**/*.js',
         dest: 'dist/**/*.html'
@@ -199,5 +200,5 @@ module.exports = function(grunt) {
   grunt.registerTask('preview', ['jshint:src', 'wintersmith:preview']);
   grunt.registerTask('build', ['clean:build', 'jshint:src', 'wintersmith:production']);
   grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
-  grunt.registerTask('deploy', ['build', 'dist', 'hashres', 'git_deploy:gh_pages']);
+  grunt.registerTask('deploy', ['clean', 'build', 'dist', 'hashres', 'git_deploy:gh_pages']);
 };
