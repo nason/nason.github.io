@@ -106,7 +106,6 @@ module.exports = function(grunt) {
         cwd: 'build/images/',
         src: ['*.svg'],
         dest: 'dist/images/'
-
       },
       fonts: {
         expand: true,
@@ -114,17 +113,17 @@ module.exports = function(grunt) {
         src: ['*'],
         dest: 'dist/fonts/'
       },
-      nojekyll: {
-        src: 'build/.nojekyll',
-        dest: 'dist/.nojekyll'
-      },
-      cname: {
-        src: 'build/CNAME',
-        dest: 'dist/CNAME'
-      },
       feed: {
         src: 'build/feed.xml',
         dest: 'dist/feed.xml'
+      },
+      cname: {
+        src: 'CNAME',
+        dest: 'dist/CNAME'
+      },
+      readme: {
+        src: 'Readme.md',
+        dest: 'dist/Readme.md'
       }
     },
 
@@ -139,6 +138,47 @@ module.exports = function(grunt) {
       },
     },
 
+    hashres: {
+      options: {
+        encoding: 'utf8',
+        fileNameFormat: '${name}.${hash}.${ext}',
+        renameFiles: true
+      },
+      css: {
+        src: 'dist/**/*.css',
+        dest: 'dist/**/*.html'
+      },
+      js: {
+        src: 'dist/**/*.js',
+        dest: 'dist/**/*.html'
+      },
+      images: {
+        src: [
+          'dist/**/*.png',
+          'dist/**/*.jpg',
+          'dist/**/*.gif',
+          'dist/**/*.svg'
+        ],
+        dest: [
+          'dist/**/*.html',
+          'dist/**/*.xml',
+          'dist/**/*.js',
+          'dist/**/*.css',
+          'dist/**/*.md'
+        ]
+      },
+      fonts: {
+        src: [
+          'dist/**/*.eot',
+          'dist/**/*.ttf',
+          'dist/**/*.woff'
+        ],
+        dest: [
+          'dist/**/*.html',
+          'dist/**/*.css'
+        ]
+      }
+    }
 
   });
 
@@ -152,12 +192,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-wintersmith');
   grunt.loadNpmTasks('grunt-git-deploy');
+  grunt.loadNpmTasks('grunt-hashres');
 
   // Default task(s).
   grunt.registerTask('default', ['preview']);
   grunt.registerTask('preview', ['jshint:src', 'wintersmith:preview']);
   grunt.registerTask('build', ['clean:build', 'jshint:src', 'wintersmith:production']);
   grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
-  grunt.registerTask('deploy', ['build', 'dist', 'git_deploy:gh_pages']);
-
+  grunt.registerTask('deploy', ['build', 'dist', 'hashres', 'git_deploy:gh_pages']);
 };
