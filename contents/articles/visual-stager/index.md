@@ -92,7 +92,7 @@ This was a big project with a super team of developers with diverse backgrounds,
   * Daily standups
   * Collaborating with team members on difficult problems
   * Struggling with complex workflows
-  * Git merge conflics
+  * Git merge conflicts
   * Quickly learning new technologies to complete tasks
 
 
