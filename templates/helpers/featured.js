@@ -8,7 +8,7 @@ module.exports = function(articles) {
 
 var buildTop = function(article) {
     if (!article.metadata.thumb) {
-        return noPictureFeature(article);
+        return noPictureFeature(article, true);
     } else {
         return '<!-- Feature 1 -->' +
             '<article id="first" class="container box style1 right blog">' +
@@ -42,9 +42,10 @@ var buildBottom = function(article) {
     }
 };
 
-var noPictureFeature = function(article) {
+var noPictureFeature = function(article, first) {
+    var id = first ? 'id="first" ' : '';
     return '<!-- Feature 2 -->' +
-        '<article class="container box style1 blog">' +
+        '<article ' + id + 'class="container box style1 blog nothumb">' +
             '<a href="' + article.url + '">' +
             '<div class="inner">' +
                 '<header>' +
