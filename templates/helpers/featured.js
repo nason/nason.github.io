@@ -45,9 +45,9 @@ var buildBottom = function(article) {
 var noPictureFeature = function(article, first) {
     var id = first ? 'id="first" ' : '';
     return '<!-- Feature 2 -->' +
-        '<article ' + id + 'class="container box style1 blog nothumb">' +
+        '<article ' + id + 'class="container box style1 blog">' +
             '<a href="' + article.url + '">' +
-            '<div class="inner">' +
+            '<div class="inner nothumb">' +
                 '<header>' +
                     '<h2>' + article.metadata.title + '</h2>' +
                 '</header>' +
