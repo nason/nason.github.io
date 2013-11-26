@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{#if page}}{{ page.intro }}{{else}}{{ description }}{{/if}}">
     <meta name="keywords" content="{{ keywords }}">
+    {{> og}}
     <meta name="signet:authors" content="Michael Nason">
     <meta name="signet:links" content="https://github.com/nason, https://twitter.com/nasonosan, http://nason.us">
     <link rel="alternate" href="{{ url }}{{ feedPath }}" type="application/rss+xml" title="{{ name }}">
