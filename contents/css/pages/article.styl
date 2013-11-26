@@ -1,4 +1,16 @@
 #post, #page
+  p
+    img
+      max-width: 100%
+      height: auto;
+      margin: 0 auto;
+      display: block;
+  :not(pre) > code
+    background-color: $code-bg
+    color: $code-text
+    font-style: italic
+    padding: 0.2em 0.4em
+    border-radius: 2px;
   #page-header
     background: $black;
     background: $black-40;
@@ -16,14 +28,6 @@
       list-style: disc;
     ol
       list-style: decimal;
-
-#post
-  p
-    img
-      max-width: 100%
-      height: auto;
-      margin: 0 auto;
-      display: block;
 
 #page
   background: $burnt-orange
