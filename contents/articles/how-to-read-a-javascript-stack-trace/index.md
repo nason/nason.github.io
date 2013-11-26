@@ -118,7 +118,7 @@ while( input.length ) {
 
 Now, your script will pause execution when it hits this statement. In this case, that will happen once you submit some text in the form. The **Sources** panel has all kinds of information that will help you debug this code:
 
-[debugger](debugger.png)
+![debugger](debugger.png)
 
 OK, that's a lot to take in there. Let's go through some of the components:
 
