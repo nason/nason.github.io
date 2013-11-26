@@ -46,7 +46,7 @@ I had always wanted to learn more about geometry and 3D rendering, so I really c
 
 This is the essence of my primary contribution to Visual Stager. So much more is possible, but I didn't want to make you load a 10MB file. Sorry about the low quality/glitchy GIF.
 
-Rest assured, this was not as simple as anything like:
+Rest assured, this was **not** as simple as anything like:
 
 ``` javascript
 item.y += mouse.y;
