@@ -4,9 +4,9 @@
   {{#if homePage}}
   <nav>
     <ul class="actions">
-        <li><a href="{{#unless homePage}}/blog/{{else}}#first" class="scrolly{{/unless}}">blog</a></li>
-        <li><a href="{{#unless homePage}}/about/{{else}}#intro" class="scrolly{{/unless}}">about</a></li>
-        <li><a href="{{#unless homePage}}/{{/unless}}#contact" class="scrolly">contact</a></li>
+        <li><a href="{{#unless homePage}}/blog/{{else}}#first" class="scroll{{/unless}}">blog</a></li>
+        <li><a href="{{#unless homePage}}/about/{{else}}#banner" class="scroll{{/unless}}">about</a></li>
+        <li><a href="{{#unless homePage}}/{{/unless}}#contact" class="scroll">contact</a></li>
     </ul>
   </nav>
   {{/if}}
@@ -26,7 +26,7 @@
 
   {{#if homePage}}
   <footer>
-    <a href="#intro" class="button style2 scrolly"><strong>Proceed</strong> &crarr;</a>
+    <a href="#banner" class="button style2 scroll"><strong>Proceed</strong> &crarr;</a>
   </footer>
   {{/if}}
 

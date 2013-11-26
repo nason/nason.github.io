@@ -2,28 +2,12 @@ var $ = require('./components/jquery');
 var site = require('./init.js');
 
 $(function() {
+  // Needs to happen after document ready
+  require('./vendor/smooth-scroll.js');
 
   var $window = $(window),
       $body = $('body');
 
-  // Scrolly links
-  /*
-    Based on Overflow 1.1 by HTML5 UP
-    html5up.net | @n33co
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  */
-  $('.scrolly').click(function(e) {
-    e.preventDefault();
-    var h = $(this).attr('href'),
-        target = $(e.target);
-
-    if (h.charAt(0) === '#' && h.length > 1 && (target = $(h)).length > 0) {
-      var pos = Math.max(target.offset().top, 0);
-      pos -= site.skel.isActive('mobile') ? 70 : 190;
-
-      $('body,html').animate({ scrollTop: pos }, 1000, 'swing');
-    }
-  });
 
   // Full Screen Header
   /*
