@@ -54,7 +54,7 @@ item.y += mouse.y;
 
 This behavior involves complex math, tweaked to improve perceived experience, and firing lots of rays(!). This behavior works via either touch or click, and in combination with other behaviors,  in real-time.
 
-I can't go into more detail due to to the company's proprietary technology, but I will do my best to entertain any [inquiries via email](http://nason.us/#contact/). Needless to say, I learned an incredible amount while working on this particular issue.
+I can't go into more detail due to to the company's proprietary technology, but I will do my best to entertain any [inquiries via email](http://nason.us/#contact). Needless to say, I learned an incredible amount while working on this particular issue.
 
 
 ### Workflow Automation
