@@ -15,7 +15,7 @@ I founded a company, [Zip Eyewear](http://www.zipeyewear.com), to bring new tech
 
 One of the most fascinating things I've ever learned is that light exhibits properties of both particles and waves. I know, I know, we all learned and glossed over that tidbit in high school science..
 
-
+<iframe src="//commons.wikimedia.org/wiki/File:Wave-particle_duality.ogv?embedplayer=yes" width="100%" height="480px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 But this paradox goes beyond light. All of this gets super interesting at the quantum scale, where every particle also has wave-like properties.
 
