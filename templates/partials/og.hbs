@@ -3,4 +3,4 @@
 <meta property="og:title" content="{{#if page}}{{page.title}} | {{/if}}{{ name }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{url}}{{page.url}}" />
-{{#if page.metadata.thumb}}<meta property="og:image" content="{{url}}{{page.url}}{{page.metadata.thumb}}" />{{/if}}
+<meta property="og:image" content="{{url}}{{#if page.metadata.thumb}}{{page.url}}{{page.metadata.thumb}}{{else}}/images/profile.jpg{{/if}}" />
