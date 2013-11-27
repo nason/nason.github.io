@@ -1,6 +1,4 @@
-module.exports = fullScreenHeader = {};
-
-fullScreenHeader.handleEvent = function() {
+var fullScreenHeader = function() {
   var header = document.querySelector('#header'),
       tag = header.querySelector('header');
   if (header && tag) {
@@ -13,7 +11,7 @@ fullScreenHeader.handleEvent = function() {
   }
 };
 
-fullScreenHeader.init = function() {
-  this.handleEvent();
-  window.addEventListener("resize", this.handleEvent, false);
-};
+module.exports = (function() {
+  fullScreenHeader();
+  window.addEventListener("resize", fullScreenHeader, false);
+})();

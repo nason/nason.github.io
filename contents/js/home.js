@@ -6,7 +6,7 @@ domready(function() {
   require('./vendor/smooth-scroll.js');
 
   // Full Page Header
-  require('./full-header.js').init();
+  require('./full-header.js');
 
   // Homepage effects
   require('./homepage-effects.js');
