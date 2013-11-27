@@ -1,4 +1,4 @@
-require('./components/signet/signet.js');
+head.load('/js/vendor/signet.js');
 
 module.exports = site = {};
 site.skel = require('./vendor/skel.min.js');
