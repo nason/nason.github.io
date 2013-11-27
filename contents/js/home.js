@@ -14,20 +14,6 @@ $(function() {
   require('./homepage-effects.js');
 
   // Contact Form
-  var $form = $('form#email');
-  if ($form.length) {
-    var $button = $form.find('.button');
-    $button.on('click', function(e) {
-      e.preventDefault();
-      $form.submit();
-    });
-
-    // Contact form error handling
-    if (window.location.hash === "#contact-error") {
-      $('#contact-error').show();
-    } else {
-      $('#contact-error').hide();
-    }
-  }
+  require('./contact-form.js');
 
 });
