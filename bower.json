@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "signet": "~0.4.5",
-    "domready": "*"
+    "signet": "~0.4.5"
   }
 }
