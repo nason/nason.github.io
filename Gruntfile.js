@@ -31,9 +31,6 @@ module.exports = function(grunt) {
         eqeqeq: true,
         eqnull: true,
         browser: true,
-        globals: {
-          jQuery: true
-        },
         ignores: ['**/*.min.js']
       },
       src: ['Gruntfile.js', 'templates/helpers/*.js', 'contents/js/*.js']
@@ -61,11 +58,10 @@ module.exports = function(grunt) {
         preserveComments: false
       },
       dist: {
-        files: {
-          'dist/js/home.min.js': ['build/js/home.js'],
-          'dist/js/init.min.js': ['build/js/init.js'],
-          'dist/js/vendor/liga.min.js': ['build/js/vendor/liga.js']
-        }
+        expand: true,
+        cwd: 'build/js/',
+        src: '**/*.js',
+        dest: 'dist/js/'
       }
     },
 
@@ -151,7 +147,10 @@ module.exports = function(grunt) {
       // },
       js: {
         src: 'dist/**/*.js',
-        dest: 'dist/**/*.html'
+        dest: [
+          'dist/**/*.html',
+          'dist/**/*.js'
+        ]
       },
       images: {
         src: [
