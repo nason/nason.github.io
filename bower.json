@@ -17,6 +17,5 @@
     "tests"
   ],
   "dependencies": {
-    "signet": "~0.4.5"
   }
 }
