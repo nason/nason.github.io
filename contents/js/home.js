@@ -1,9 +1,7 @@
 var site = require('./init.js');
-var $ = require('./components/jquery');
+var domready = require('./components/domready');
 
-$(function() {
-  // TODO: Don't use jQuery.
-
+domready(function() {
   // Smooth scroll animations
   require('./vendor/smooth-scroll.js');
 
@@ -15,5 +13,4 @@ $(function() {
 
   // Contact Form
   require('./contact-form.js');
-
 });
