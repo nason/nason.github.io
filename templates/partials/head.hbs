@@ -11,15 +11,14 @@
     <meta name="signet:links" content="https://github.com/nason, https://twitter.com/nasonosan, http://nason.us">
     <link rel="alternate" href="{{ url }}{{ feedPath }}" type="application/rss+xml" title="{{ name }}">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
-    <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
-    {{#if homePage}}
-    <script src="/js/home{{#if production}}.min{{/if}}.js"></script>
-    {{else}}
-    <script src="/js/init{{#if production}}.min{{/if}}.js"></script>
-    {{/if}}
+
     <link rel="stylesheet" href="/css/main.css" />
+
+    <script src="/js/vendor/head.js" data-headjs-load="/js/{{#if homePage}}home{{else}}init{{/if}}.js"></script>
+
     <noscript>
         <link rel="stylesheet" href="/css/skel-noscript.css" />
     </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
 </head>
