@@ -14,7 +14,8 @@ module.exports = function(grunt) {
       dist: {
         options: {
           optimizationLevel: 7,
-          pngquant: true
+          pngquant: true,
+          cache: false
         },
         files: [{
           expand: true,
