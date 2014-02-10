@@ -282,7 +282,7 @@ module.exports = skel = (function() { var _ = {
         // Clear the lock state
           _.lockState = null;
           document.cookie = _.lsc + '=;expires=Thu, 1 Jan 1970 12:00:00 UTC; path=' + (_.config.useDomainLock ? '/' : window.location.pathname);
-          console.log('api: unlocking width');
+          //console.log('api: unlocking width');
         
         // Poll or reload
           if (_.config.pollOnLock)
@@ -299,7 +299,7 @@ module.exports = skel = (function() { var _ = {
         // Set the lock state
           _.lockState = w;
           document.cookie = _.lsc + '=' + w + ';expires=' + (_.config.usePerpetualLock ? 'Thu, 1 Jan 2077 12:00:00 UTC' : 0) + '; path='  + (_.config.useDomainLock ? '/' : window.location.pathname);
-          console.log('api: locking width to ' + w);
+          //console.log('api: locking width to ' + w);
         
         // Poll or reload
           if (_.config.pollOnLock)
@@ -505,7 +505,7 @@ module.exports = skel = (function() { var _ = {
       // Returns: object (Cache entry)
       cacheElement: function(id, object, location, priority) {
 
-        console.log('(cached element ' + id + ')');
+        //console.log('(cached element ' + id + ')');
 
         return (_.cache.elements[id] = {
           'id': id,
@@ -530,7 +530,7 @@ module.exports = skel = (function() { var _ = {
         // Link it to the specified breakpoint (assuming it exists)
           if (_.breakpoints[breakpointId])
           {
-            console.log('- linked element ' + id + ' to breakpoint ' + breakpointId);
+            //console.log('- linked element ' + id + ' to breakpoint ' + breakpointId);
             _.breakpoints[breakpointId].elements.push(o);
           }
 
@@ -565,7 +565,7 @@ module.exports = skel = (function() { var _ = {
               return;
 
           // Detach it
-            console.log('-- detached ' + _.cache.elements[k].id);
+            //console.log('-- detached ' + _.cache.elements[k].id);
             x.parentNode.removeChild(x);
 
           // Trigger onDetach
@@ -603,7 +603,7 @@ module.exports = skel = (function() { var _ = {
                 // If the location exists, go ahead and attach the element.
                   if (l)
                   {
-                    console.log('-- attached (' + k + ') ' + a[k][x].id);
+                    //console.log('-- attached (' + k + ') ' + a[k][x].id);
 
                     l._skel_attach( a[k][x].object );
 
@@ -618,7 +618,7 @@ module.exports = skel = (function() { var _ = {
                 // bucket for now.
                   else
                   {
-                    console.log('-- DOMReady attached (' + k + ') ' + a[k][x].id);
+                    //console.log('-- DOMReady attached (' + k + ') ' + a[k][x].id);
                     w.push(a[k][x]);
                   }
               });
@@ -706,7 +706,7 @@ module.exports = skel = (function() { var _ = {
                 
             // Add the breakpoint's elements to the state's cache
               _.iterate(b.elements, function(j) {
-                console.log('- added new breakpoint element ' + b.elements[j].id + ' to state ' + _.stateId);
+                //console.log('- added new breakpoint element ' + b.elements[j].id + ' to state ' + _.stateId);
                 _.cache.states[_.stateId].elements.push(b.elements[j]);
                 list.push(b.elements[j]);
               });
@@ -715,7 +715,7 @@ module.exports = skel = (function() { var _ = {
         // If new elements were detected, go ahead and attach them
           if (list.length > 0)
           {
-            console.log('- updating state ... ');
+            //console.log('- updating state ... ');
             _.attachElements(list);
           }
 
@@ -734,12 +734,12 @@ module.exports = skel = (function() { var _ = {
         // 2. Change state ID
           _.stateId = newStateId;
 
-          console.log('new state detected (id: ' + _.stateId + ')');
+          //console.log('new state detected (id: ' + _.stateId + ')');
         
         // 3. Get state
           if (!_.cache.states[_.stateId])
           {
-            console.log('- not cached. building ...');
+            //console.log('- not cached. building ...');
 
             // 3.1. Build state
               _.cache.states[_.stateId] = { config: {}, elements: [], values: {} };
@@ -777,7 +777,7 @@ module.exports = skel = (function() { var _ = {
                       );
 
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
 
@@ -797,7 +797,7 @@ module.exports = skel = (function() { var _ = {
                       );
                   
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
                 else if (_.config.normalizeCSS)
@@ -814,7 +814,7 @@ module.exports = skel = (function() { var _ = {
                       );
 
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
                 
@@ -834,7 +834,7 @@ module.exports = skel = (function() { var _ = {
                       );
                   
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
                 
@@ -861,7 +861,7 @@ module.exports = skel = (function() { var _ = {
                       );
                   
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
                 else if (state.config.viewportWidth)
@@ -881,7 +881,7 @@ module.exports = skel = (function() { var _ = {
                       );
                   
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
                 
@@ -902,7 +902,7 @@ module.exports = skel = (function() { var _ = {
                         );
 
                     // Push to state
-                      console.log('- added ' + id);
+                      //console.log('- added ' + id);
                       state.elements.push(x);
                   }
                 
@@ -954,7 +954,7 @@ module.exports = skel = (function() { var _ = {
                   }
 
                 // Push to state
-                  console.log('- added ' + id);
+                  //console.log('- added ' + id);
                   state.elements.push(x);           
 
               // ELEMENT: (CSS) Grid
@@ -995,7 +995,7 @@ module.exports = skel = (function() { var _ = {
                     ); 
                 
                 // Push to state
-                  console.log('- added ' + id);
+                  //console.log('- added ' + id);
                   state.elements.push(x);
 
               // ELEMENT: (CSS) Grid / Rows
@@ -1016,7 +1016,7 @@ module.exports = skel = (function() { var _ = {
                     ); 
                 
                 // Push to state
-                  console.log('- added ' + id);
+                  //console.log('- added ' + id);
                   state.elements.push(x);
 
               // ELEMENT: (CSS) Grid / Rows / Gutters
@@ -1082,7 +1082,7 @@ module.exports = skel = (function() { var _ = {
                   }
 
                 // Push to state
-                  console.log('- added ' + id);
+                  //console.log('- added ' + id);
                   state.elements.push(x);
 
               // ELEMENT: (CSS) Grid / Collapse
@@ -1138,7 +1138,7 @@ module.exports = skel = (function() { var _ = {
                     }
                   
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);           
                 }
                 
@@ -1170,7 +1170,7 @@ module.exports = skel = (function() { var _ = {
                     );
                   
                   // Push to state
-                    console.log('- added ' + id);
+                    //console.log('- added ' + id);
                     state.elements.push(x);
                 }
 
@@ -1192,7 +1192,7 @@ module.exports = skel = (function() { var _ = {
                           );
                       
                       // Push to state
-                        console.log('- added ' + id);
+                        //console.log('- added ' + id);
                         state.elements.push(x);
                     }
                   
@@ -1201,7 +1201,7 @@ module.exports = skel = (function() { var _ = {
                     {
                       // Push elements to state
                         _.iterate(_.breakpoints[breakpointIds[k]].elements, function(x) {
-                          console.log('- added breakpoint element ' + _.breakpoints[breakpointIds[k]].elements[x].id);
+                          //console.log('- added breakpoint element ' + _.breakpoints[breakpointIds[k]].elements[x].id);
                           state.elements.push(_.breakpoints[breakpointIds[k]].elements[x]);
                         });
                     }
@@ -1210,15 +1210,15 @@ module.exports = skel = (function() { var _ = {
           else
           {
             state = _.cache.states[_.stateId];
-            console.log('- found cached');
+            //console.log('- found cached');
           }
 
         // 4. Detach all elements
-          console.log('- detaching all attached elements ...');
+          //console.log('- detaching all attached elements ...');
           _.detachAllElements();
 
         // 5. Apply state
-          console.log('- applying state elements ... ');
+          //console.log('- applying state elements ... ');
           _.attachElements(state.elements);
           
         // 6. DOMReady stuff
@@ -1271,7 +1271,7 @@ module.exports = skel = (function() { var _ = {
                       if (e.hasOwnProperty(m) && e[m] !== false)
                         return;
 
-                      console.log('important: moving to top of row (' + i + ')');
+                      //console.log('important: moving to top of row (' + i + ')');
 
                       // Create placeholder.
                         p = document.createElement('div');
@@ -1298,7 +1298,7 @@ module.exports = skel = (function() { var _ = {
                       // If it's not false, move cell back.
                         if (p !== false)
                         {
-                          console.log('important: moving back (' + i + ')');
+                          //console.log('important: moving back (' + i + ')');
 
                           // Move e above placeholder.
                             e.parentNode.insertBefore(e, p);
@@ -1571,7 +1571,7 @@ module.exports = skel = (function() { var _ = {
               var k, h = document.getElementsByTagName('head')[0], x = new XMLHttpRequest();
               
               _.iterate(preloads, function(k) {
-                console.log('preloading ' + preloads[k]);
+                //console.log('preloading ' + preloads[k]);
                 x.open('GET', preloads[k], false);
                 x.send('');
               });
@@ -1747,14 +1747,14 @@ module.exports = skel = (function() { var _ = {
             }
           });
           
-          console.log('api: width lock is ' + _.lockState);
+          //console.log('api: width lock is ' + _.lockState);
 
       },      
       
       // Initializes skelJS
       init: function(config, pluginConfig) {
 
-        console.log('starting init');
+        //console.log('starting init');
 
         // Init utility methods
           _.initUtilityMethods();
@@ -1809,7 +1809,7 @@ module.exports = skel = (function() { var _ = {
       // manually call skel.init() with a configuration).
       preInit: function() {
 
-        console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        //console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         // Initialize 'me'
           var x = document.getElementsByTagName('script');
@@ -1818,7 +1818,7 @@ module.exports = skel = (function() { var _ = {
         // Are we preconfigured?
           if (window._skel_config)
           {
-            console.log('detected configuration (type: preconfigured), performing automatic init');
+            //console.log('detected configuration (type: preconfigured), performing automatic init');
             _.isConfigured = true;
           }
         // Are we inline configured?
@@ -1829,7 +1829,7 @@ module.exports = skel = (function() { var _ = {
             
             // if (s)
             // {
-            //   console.log('detected configuration (type: inline), performing automatic init');
+            //   //console.log('detected configuration (type: inline), performing automatic init');
             //   _.isConfigured = true;
             // }
           }
@@ -1840,7 +1840,7 @@ module.exports = skel = (function() { var _ = {
         // Otherwise, wait for user to manually init later
           else
           {
-            console.log('no configuration detected, waiting for manual init');
+            //console.log('no configuration detected, waiting for manual init');
           }
       
       }
