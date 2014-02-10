@@ -1,8 +1,9 @@
-var site = require('./init.js');
+// var site = require('./init.js');
 
 head.load([
-  '/js/vendor/smooth-scroll.js',
+  '/js/init.js',
   '/js/full-header.js',
+  '/js/vendor/smooth-scroll.js',
   '/js/homepage-effects.js',
   '/js/contact-form.js'
 ]);

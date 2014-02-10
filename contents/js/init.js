@@ -1,8 +1,9 @@
 head.load('/js/vendor/signet.js');
 
 module.exports = site = {};
+site.skel = require('./vendor/skel.js');
 
-window._skel_config = site.settings = {
+site.settings = {
 	useFullScreenHeader: true,
 	prefix: '/css/main',
 	boxModel: 'border',
@@ -20,4 +21,5 @@ window._skel_config = site.settings = {
 	}
 };
 
-site.skel = require('./vendor/skel.min.js');
+// Initialize skelJS
+site.skel.init(site.settings);
