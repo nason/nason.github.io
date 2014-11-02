@@ -18,7 +18,7 @@ site.settings = {
     'widest' : {
       range : '1680-',
       containers : 1140,
-      href : false
+      href : '/css/main-wide.css'
     },
 
     'wide' : {
