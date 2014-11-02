@@ -1,9 +1,9 @@
 {
   "locals": {
     "url": "http://localhost:8080",
-    "name": "Particles & Waves",
+    "name": "Michael Nason",
     "owner": "Michael Nason",
-    "description": "by Michael Nason",
+    "description": "Particles & Waves",
     "feedPath": "/feed.xml"
   },
   "plugins": [

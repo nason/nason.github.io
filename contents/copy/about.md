@@ -1,17 +1,19 @@
-### Particles & Waves is the personal site of Michael Nason
-
-> “I love connecting the dots between different aspects of development. I learned Rails for a personal project and found it easy to draw similarities to Node.js and Express, as well as the JavaScript environment I’m most familiar with.”
-
+## Code
 
 I have been programming for as long as I can remember. My first experience with code involved a 5.25" floppy disk (the actual, floppy kind) on a Tandy PC.
 
-The focus of my higher education was the influence of technology on human evolution in terms of biology (specifically neurobiology) and society over the last ~150,000 years. I still took courses in Computer Science and studied the daily interactions we have with technology.
+I love connecting the dots between different aspects of development. I find that Web development hits a sweet spot for me, and requires me to constantly learn and improve. 
 
-I founded a company, [Zip Eyewear](http://www.zipeyewear.com), to bring new technology to a market that desperately needed change.
+## Previously
+
+The focus of my higher education was the influence of technology on human evolution in terms of biology (specifically neurobiology) and society over the last ~150,000 years.
+
+My coursework was primarily in Computer Science, Biology and Anthropology.
+
+After school I founded a company, [Zip Eyewear](http://www.zipeyewear.com), to bring new technology to a market that desperately needed change.
 
 
-### Particles & Waves
-
+## Particles & Waves
 
 One of the most fascinating things I've ever learned is that light exhibits properties of both particles and waves. I know, I know, we all learned and glossed over that tidbit in high school science..
 

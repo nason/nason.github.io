@@ -3,9 +3,9 @@
     "production": true,
     "analytics_id": "UA-44577443-1",
     "url": "http://nason.us",
-    "name": "Particles & Waves",
+    "name": "Michael Nason",
     "owner": "Michael Nason",
-    "description": "by Michael Nason",
+    "description": "Particles & Waves",
     "feedPath": "/feed.xml"
   },
   "plugins": [
