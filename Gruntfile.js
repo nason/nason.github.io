@@ -41,9 +41,7 @@ module.exports = function(grunt) {
       options: {
         // banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         report: 'min',    //'gzip' is nice too but slows task performance by 5-10x
-        preserveComments: false,
-        mangle: false,
-        beautify: true
+        preserveComments: false
       },
       dist: {
         files : [{
