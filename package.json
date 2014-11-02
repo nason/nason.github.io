@@ -2,10 +2,10 @@
   "private": true,
   "repository": "none",
   "devDependencies": {
-    "moment": "2.5.x",
-    "typogr": "0.6.x",
-    "wintersmith-handlebars": "~0.0.5",
-    "wintersmith-stylus": "~0.4.0",
+    "moment": "~2.8.3",
+    "typogr": "~0.6.4",
+    "wintersmith-handlebars": "~0.0.6",
+    "wintersmith-stylus": "~0.4.1",
     "wintersmith-browserify": "~0.3.0",
     "wintersmith": "~2.0.10",
     "grunt": "~0.4.2",
@@ -21,6 +21,6 @@
     "grunt-hashres": "~0.4.0"
   },
   "dependencies": {
-    "nib": "~1.0.2"
+    "nib": "~1.0.4"
   }
 }
