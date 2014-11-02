@@ -37,32 +37,21 @@ module.exports = function(grunt) {
       src: ['Gruntfile.js', 'templates/helpers/*.js', 'contents/js/*.js']
     },
 
-    wintersmith: {
-      production: {
-        options: {
-          action: "build",
-          config: './config-production.json'
-        }
-      },
-      preview: {
-        options: {
-          action: "preview",
-          config: './config.json'
-        }
-      }
-    },
-
     uglify: {
       options: {
         // banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         report: 'min',    //'gzip' is nice too but slows task performance by 5-10x
-        preserveComments: false
+        preserveComments: false,
+        mangle: false,
+        beautify: true
       },
       dist: {
-        expand: true,
-        cwd: 'build/js/',
-        src: '**/*.js',
-        dest: 'dist/js/'
+        files : [{
+          expand: true,
+          cwd: 'build/js',
+          src: '**/*.js',
+          dest: 'dist/js'
+        }]
       }
     },
 
@@ -179,6 +168,22 @@ module.exports = function(grunt) {
           'dist/**/*.css'
         ]
       }
+    },
+
+    shell : {
+      wintersmith : {
+        command : function (env) {
+          if (env === 'local') {
+            return 'wintersmith preview --config config.json';
+          }
+
+          if (env === 'prod') {
+            return 'wintersmith build --config config-production.json';
+          }
+
+          return 'echo "invalid environment argument"';
+        }
+      }
     }
 
   });
@@ -191,14 +196,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-wintersmith');
   grunt.loadNpmTasks('grunt-git-deploy');
   grunt.loadNpmTasks('grunt-hashres');
+  grunt.loadNpmTasks('grunt-shell');
 
   // Default task(s).
   grunt.registerTask('default', ['preview']);
-  grunt.registerTask('preview', ['jshint:src', 'wintersmith:preview']);
-  grunt.registerTask('build', ['clean:build', 'jshint:src', 'wintersmith:production']);
-  grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
+  grunt.registerTask('preview', ['jshint:src', 'shell:wintersmith:local']);
+  grunt.registerTask('build', ['clean:build', 'jshint:src', 'shell:wintersmith:prod']);
+  grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'imagemin:dist', 'copy', 'clean:extraCSS']);
   grunt.registerTask('deploy', ['clean', 'build', 'dist', 'hashres', 'git_deploy:gh_pages']);
 };
