@@ -31,7 +31,7 @@ Its in production now with a core set of functionality. We're transitioning the 
 
 This has been a fantastic experience (though, terrifying sometimes) in application architecture, design, handling a legacy codebase, and most of all, teaching.
 
-Most of my teammates haven't had much experience with SPAs, so its been up to me to design the application to be easy to learn, and to help my teammeates ramp up and contribute to the project. In the process, we've also had some interns rotate through our team and get in on the action.
+Most of my teammates haven't had much experience with SPAs, so its been up to me to design the application to be easy to learn, and to help my teammates ramp up and contribute to the project. In the process, we've also had some interns rotate through our team and get in on the action.
 
 Everyone has definitely sharpened up on JavaScript and our team is able to deliver new features quickly that would have otherwise been very difficult. This has been a privelidge.
 
