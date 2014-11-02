@@ -1,8 +1,11 @@
+var site = require('./init');
+
 var fullScreenHeader = function() {
-  var header = document.querySelector('#header'),
-      tag = header.querySelector('header');
+  var header = document.querySelector('#header');
+  var tag = header.querySelector('header');
+
   if (header && tag) {
-    if (site.skel.isActive('mobile')) {
+    if (site.skel && site.skel.isActive('mobile')) {
       header.style.padding = "";
     } else {
       var p = Math.max(128, (window.innerHeight - tag.clientHeight) / 2);
