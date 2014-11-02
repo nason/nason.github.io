@@ -16,9 +16,16 @@
 
     <script src="/js/vendor/head.js" data-headjs-load="/js/{{#if homePage}}home{{else}}init{{/if}}.js"></script>
 
-    <noscript>
-        <link rel="stylesheet" href="/css/skel-noscript.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-    <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+    {{!--
+        FIXME noscript styles
+        <noscript>
+            <link rel="stylesheet" href="/css/skel-noscript.css" />
+        </noscript>
+    --}}
+
+    {{!--
+        FIXME actually put oldIE styles in their own stylesheet
+        <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+    --}}
+    <!--[if lte IE 8]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
 </head>
