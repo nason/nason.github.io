@@ -1,4 +1,4 @@
-var site = require('./init');
+var site = global.site;
 
 var fullScreenHeader = function() {
   var header = document.querySelector('#header');

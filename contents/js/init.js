@@ -1,6 +1,6 @@
-head.load('/js/vendor/signet.js');
+require('./vendor/signet');
 
-var site = {};
+var site = global.site = {};
 
 site.skel = require('./vendor/skel.min.js');
 
