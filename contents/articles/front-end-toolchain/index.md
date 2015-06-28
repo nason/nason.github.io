@@ -100,12 +100,12 @@ What "deploy" means is entirely specific to your project's context. After taking
 * run production build tasks
 * upload assets to s3
 * copy files into other projects
-* output minifests
+* output manifests
 * commit and push to deployment-specific branches
 
 ### Tinker carefully
 
-The way I see it, tooling has a sizeable impact on any projects success.
+The way I see it, tooling has a sizable impact on any projects success.
 
 It can be fun and super rewarding to tinker with and improve. At the same time, it can get very complex and becomes easy to break in subtle ways.
 
