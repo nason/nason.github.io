@@ -7,11 +7,20 @@
     <meta name="description" content="{{#if page}}{{ stripTags page.intro }}{{else}}{{ description }}{{/if}}">
     <meta name="keywords" content="{{ keywords }}">
     {{> og}}
+
     <meta name="signet:authors" content="Michael Nason">
     <meta name="signet:links" content="https://github.com/nason, https://twitter.com/nasonosan, http://nason.us">
-    <link rel="alternate" href="{{ url }}{{ feedPath }}" type="application/rss+xml" title="{{ name }}">
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
 
+    <link rel="alternate" href="{{ url }}{{ feedPath }}" type="application/rss+xml" title="{{ name }}">
+
+    <script>
+    // HTTPS only
+    var host = "nason.us";
+    if ((host === window.location.host) && (window.location.protocol !== "https:"))
+        window.location.protocol = "https";
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/css/main.css" />
 
     <script src="/js/vendor/head.js" data-headjs-load="/js/{{#if homePage}}home{{else}}init{{/if}}.js"></script>

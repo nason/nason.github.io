@@ -7,7 +7,7 @@ categories: Code
 comments: true
 ---
 
-[ForUs](http://www.forusall.com) is on a mission! They are an awesome company that makes interactive & intelligent guides about retirement benefits. Honestly, what do you know about your 401(k)? They help make this stuff simple and actionable. I think its great.
+[ForUs](https://www.forusall.com) is on a mission! They are an awesome company that makes interactive & intelligent guides about retirement benefits. Honestly, what do you know about your 401(k)? They help make this stuff simple and actionable. I think its great.
 
 They encountered a bit of a roadblock distributing their content at companies they work with: HR departments often don't have accurate or up-to-date employee email addresses or mobile phone numbers.
 

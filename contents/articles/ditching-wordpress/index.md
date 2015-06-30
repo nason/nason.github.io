@@ -28,7 +28,7 @@ I love the idea of authoring content in a lightweight format (i.e., Markdown). I
 
 When I started investigating WordPress alternatives I was floored by the sheer number of projects out there.
 
-I nearly convinced myself to switch to [Ghost](http://www.ghost.org), but decided it was too immature and still too complex (but not before making a couple contributions to the project first)!
+I nearly convinced myself to switch to [Ghost](https://www.ghost.org), but decided it was too immature and still too complex (but not before making a couple contributions to the project first)!
 
 Don't get me wrong, Ghost is awesome, but I have no need to serve my site from a Node server or utilize Backbone even though I'm a big fan of both those tools.
 
@@ -43,7 +43,7 @@ This is different from Ghost because it is a Node module that you execute locall
 With Wintersmith, I am able to generate static pages using my preferred tools:
 
 * [Handlebars](http://handlebarsjs.com/) for HTML templating
-* [Stylus](http://learnboost.github.io/stylus/) for CSS preprocessing
+* [Stylus](https://learnboost.github.io/stylus/) for CSS preprocessing
 * [Bower](http://bower.io/) for front-end dependency management
 * [Browserify](http://browserify.org/) to modularize front-end code
 * [Grunt](http://gruntjs.com/) for workflow automation

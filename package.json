@@ -2,7 +2,7 @@
   "private": true,
   "repository": {
     "type" : "git",
-    "url" : "http://github.com/nason/nason.github.io.git"
+    "url" : "https://github.com/nason/nason.github.io.git"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
