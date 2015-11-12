@@ -14,7 +14,6 @@ module.exports = function(grunt) {
       dist: {
         options: {
           optimizationLevel: 7,
-          pngquant: true,
           cache: false
         },
         files: [{
@@ -74,7 +73,8 @@ module.exports = function(grunt) {
       dist: {
         options: {
           // banner: '/* My minified css file */'
-          report: 'gzip'
+          report: 'gzip',
+          keepBreaks: true
         },
         expand: true,
         cwd: 'build/css/',
@@ -85,6 +85,12 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      // 'css' : {
+      //   expand: true,
+      //   cwd: 'build/css',
+      //   src: ['**/*.css'],
+      //   dest: 'dist/css'
+      // },
       'svg-images': {
         expand: true,
         cwd: 'build/images/',
