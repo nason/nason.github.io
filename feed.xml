@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<rss version='2.0' xmlns:content='http://purl.org/rss/1.0/modules/content/' xmlns:wfw='http://wellformedweb.org/CommentAPI/' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:atom='http://www.w3.org/2005/Atom'>
+  <channel>
+    <title>Michael Nason></title>
+    <atom:link href="https://nason.us/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>https://nason.us</link>
+    <description>Particles &amp; Waves</description>
+    <pubDate>Sat, 27 Jun 2015 17:00:00 -0700</pubDate>
+    <language>en</language>
+
+    
+    
+    <item>
+      <title>Hack Reactor Day 1</title>
+      <link>https://nason.us/articles/hack-reactor-day-1/</link>
+      <pubDate>Sun, 04  Aug 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/hack-reactor-day-1/</guid>
+      <author>Michael Nason</author>
+      <description>Today I started a 12 week immersive programming bootcamp @ Hack Reactor….whoa! </description>
+    </item>
+    
+    <item>
+      <title>How to Read a JavaScript Stack Trace</title>
+      <link>https://nason.us/articles/how-to-read-a-javascript-stack-trace/</link>
+      <pubDate>Tue, 08 Oct 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/how-to-read-a-javascript-stack-trace/</guid>
+      <author>Michael Nason</author>
+      <description>Understanding a stack trace is an essential skill for any software developer. In this post, I’ll show you how to read a stack trace and give an example of how to use a stack trace to debug client-side JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>Front-End Tooling</title>
+      <link>https://nason.us/articles/front-end-toolchain/</link>
+      <pubDate>Fri, 01 May 2015 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/front-end-toolchain/</guid>
+      <author>Michael Nason</author>
+      <description>One of my guilty pleasures is setting up toolchains and development environments for front-end applications.
+I’m going to summarize my thoughts on the subject here.
+</description>
+    </item>
+    
+    <item>
+      <title>One Long Lap</title>
+      <link>https://nason.us/articles/gap-year/</link>
+      <pubDate>Sat, 01 Nov 2014 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/gap-year/</guid>
+      <author>Michael Nason</author>
+      <description>Well, I spent all this effort making a fancy site, but then failed to write content for it. It’s been nearly a year since I re-launched my site and wrote my last post.
+</description>
+    </item>
+    
+    <item>
+      <title>On Learning Ruby</title>
+      <link>https://nason.us/articles/on-learning-ruby/</link>
+      <pubDate>Sat, 05 Oct 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/on-learning-ruby/</guid>
+      <author>Michael Nason</author>
+      <description>I recently built Bridgely during my 3 week client-project period at Hack Reactor. I had been working in JavaScript exclusively, and was under the impression that I would be able to build this project with a Node.js + Express backend, which I had become very familiar with. My client, however, wanted a Ruby on Rails app. I decided to take on the project and learn Rails… </description>
+    </item>
+    
+    <item>
+      <title>Upgrading http links</title>
+      <link>https://nason.us/articles/upgrading-http-links-with-javascript/</link>
+      <pubDate>Sat, 27 Jun 2015 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/upgrading-http-links-with-javascript/</guid>
+      <author>Michael Nason</author>
+      <description>HTTPS is no newcomer and continues to be increasingly important. With the Let’s Encrypt project, HTTPS should become ubiquitous (and that is awesome!).
+I say should, because it’s up to content producers and publishers to take the effort to set it up on their server, and then responsibly link to others.
+</description>
+    </item>
+    
+    <item>
+      <title>Visual Stager Group Project</title>
+      <link>https://nason.us/articles/visual-stager/</link>
+      <pubDate>Tue, 22 Oct 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/visual-stager/</guid>
+      <author>Michael Nason</author>
+      <description>I just wrapped-up my Hack Reactor group project on Visual Stager.
+We took an existing ~20,000 line codebase and dove right in, closing tickets along the way. Ultimately, we built a new feature that is now in beta. </description>
+    </item>
+    
+    <item>
+      <title>Bridgely: Text Messaging for Corporations</title>
+      <link>https://nason.us/articles/bridgely-text-messaging-for-corporations/</link>
+      <pubDate>Thu, 17 Oct 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/bridgely-text-messaging-for-corporations/</guid>
+      <author>Michael Nason</author>
+      <description>ForUs is on a mission! They are an awesome company that makes interactive &amp;amp; intelligent guides about retirement benefits. Honestly, what do you know about your 401(k)? They help make this stuff simple and actionable. I think its great.
+They encountered a bit of a roadblock distributing their content at companies they work with: HR departments often don’t have accurate or up-to-date employee email addresses or mobile phone numbers.
+
+I teamed up with ForUs to develop an open-source tool, Bridgely, that helps bridge this gap and enables companies to deliver content to employees via text messaging.
+</description>
+    </item>
+    
+    <item>
+      <title>Ditching Wordpress</title>
+      <link>https://nason.us/articles/ditching-wordpress/</link>
+      <pubDate>Sun, 24 Nov 2013 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">https://nason.us/articles/ditching-wordpress/</guid>
+      <author>Michael Nason</author>
+      <description>Today I am launching the second version of my personal website. I’ve migrated from WordPress to a static site, and spent a lot of time thinking about experience and design.
+In this post I’m going to write about static site generators, the tools I used for this site, my workflow, and open sourcing my website.</description>
+    </item>
+    
+
+  </channel>
+</rss>

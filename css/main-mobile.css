@@ -1,0 +1,44 @@
+ul.actions li,ul.menu li{display:block}
+.mobile-background{background:url(/images/tree_bg.92bf176c.jpg) center bottom no-repeat;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;max-width:640px;overflow:hidden;width:100%;height:125%;position:fixed;z-index:-1}
+*{text-shadow:none!important;-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}
+body,html{width:100%;min-height:100%}
+body{background-color:#0d0d0d}
+body,input,select,textarea{line-height:1.5em!important;font-size:12pt!important;letter-spacing:0!important}
+h2,h3,h4,h5,h6{font-size:1em}
+h2{font-size:1.25em;letter-spacing:4px}
+ul.default li{padding-left:.5em}
+ul.icons a{width:2em;height:2em;line-height:2em}
+ul.menu{padding-bottom:1em}
+ul.menu li{padding:0;border:0;margin:1em 0 0}
+ul.actions:first-child,ul.menu li:first-child{margin-top:0}
+ol.default li{padding-left:.25em}
+.button{padding:.75em 0;width:100%;max-width:320px}
+.box{margin-top:4.5em}
+.box:before{width:45px;height:33px;top:-1.25em;margin-left:-22.5px;margin-bottom:-16.5px;-webkit-background-size:45px 33px;-moz-background-size:45px 33px;background-size:45px 33px}
+.box.style1{padding:0;text-align:center}
+.box.style1:after{top:-5em;height:5em}
+.box.style1 .image{display:inline;left:0!important;width:100%!important;height:50%!important}
+.box.style1 .image img{position:relative;height:auto;width:100%}
+.box.style1 .inner{margin:0!important;padding:15em 1.25em 3em!important}
+.box.style1 .nothumb{padding-top:3em!important}
+.box.style2:after{top:-4.5em;height:4.5em}
+.box.style2 .inner .row:before{display:none}
+.box.style2 .inner .image{padding:0;max-width:250px;margin:0 auto 20px}
+.box.style3{padding:2em 1.25em}
+.box.style3:after{top:-5em;height:5em}
+#page .box.style3,#post .box.style3{margin-top:5em}
+#header{padding:6em 0}
+#header .icons a{font-size:1.2em!important}
+#header nav ul li{margin:0 1.5em}
+#header header{padding-left:2em;padding-right:2em}
+#header header h1{font-size:1.75em;letter-spacing:6px}
+#header footer{bottom:4.5em;padding:0 2em}
+#header footer:after{bottom:-4.5em;left:50%;height:4.5em}
+#header footer:before{width:45px;height:33px;bottom:-2.25em;margin-left:-22.5px;margin-bottom:-16.5px;-webkit-background-size:45px 33px;-moz-background-size:45px 33px;background-size:45px 33px}
+#banner{padding:3em 2em;-webkit-background-size:auto 150%;-moz-background-size:auto 150%;background-size:auto 150%}
+#banner header{margin:0 0 1em}
+#banner header h2{font-size:1.5em;letter-spacing:6px}
+#banner header img.profile{margin:0}
+#banner .row img{max-height:3.5em}
+#footer .copyright{font-size:.8em}
+#footer .about{-webkit-column-count:1;-moz-column-count:1;column-count:1;-webkit-column-width:100%;-moz-column-width:100%;column-width:100%}

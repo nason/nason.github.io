@@ -1,0 +1,13 @@
+.mobile-background{background:url(/images/tree_bg.92bf176c.jpg) center bottom no-repeat;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;width:100%;height:125%;position:fixed;z-index:-1}
+.box,.box.style2 .inner{position:relative}
+body,input,select,textarea{font-size:14pt!important}
+header p{margin:.25em 0 0;padding:0 0 .5em}
+.box section{margin:0 0 2em}
+.box.style1{padding:2.5em 2em}
+.box.style1.right .inner{padding-left:2em}
+.box.style1.left .inner{padding-right:2em}
+.box.style2 header{padding:2em}
+.box.style3{padding:2.5em 2em}
+#banner{padding:3.5em;-webkit-background-size:200% auto;-moz-background-size:200% auto;background-size:200% auto}
+#banner br{display:none}
+#banner .row img{max-height:3.5em}
