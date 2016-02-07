@@ -1,11 +1,12 @@
 {
   "private": true,
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/nason/nason.github.io.git"
+    "type": "git",
+    "url": "https://github.com/nason/nason.github.io.git"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^0.14.0",
@@ -25,5 +26,11 @@
   },
   "dependencies": {
     "nib": "^1.1.0"
+  },
+  "scripts": {
+    "start": "grunt",
+    "build" : "grunt build",
+    "dist" : "grunt dist",
+    "deploy" : "grunt deploy"
   }
 }
