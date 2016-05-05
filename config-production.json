@@ -15,9 +15,6 @@
     "wintersmith-stylus",
     "wintersmith-browserify"
   ],
-  "stylus" : {
-    "dependencies": ["nib"]
-  },
   "shared": {
     "articles": "articles"
   },
