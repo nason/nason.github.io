@@ -1,16 +1,16 @@
 <!DOCTYPE html><html lang=en><head><title>Upgrading http links | Michael Nason | Particles &amp; Waves</title><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=apple-mobile-web-app-status-bar-style content=black-translucent><meta name=viewport content="width=device-width,initial-scale=1,minimal-ui"><meta name=description content="HTTPS is no newcomer and continues to be increasingly important. With the Let’s Encrypt project, HTTPS should become ubiquitous (and that is awesome!).
 I say should, because it’s up to content producers and publishers to take the effort to set it up on their server, and then responsibly link to others.
-"><meta name=keywords content=""><meta property=profile:first_name content=Michael><meta property=profile:last_name content=Nason><meta property=og:title content="Upgrading http links | Michael Nason"><meta property=og:type content=website><meta property=og:url content=https://nason.us/articles/upgrading-http-links-with-javascript/ ><meta property=og:image content=https://nason.us/images/profile.0a792be5.jpg><meta name=signet:authors content="Michael Nason"><meta name=signet:links content="https://github.com/nason, https://twitter.com/nasonosan, http://nason.us"><link rel=alternate href=https://nason.us/feed.xml type=application/rss+xml title="Michael Nason"><script>// HTTPS only
+"><meta name=keywords content=""><meta property=profile:first_name content="Michael"><meta property=profile:last_name content="Nason"><meta property=og:title content="Upgrading http links | Michael Nason"><meta property=og:type content="website"><meta property=og:url content="https://nason.us/articles/upgrading-http-links-with-javascript/"><meta property=og:image content="https://nason.us/images/profile.d2c90667.jpg"><meta name=signet:authors content="Michael Nason"><meta name=signet:links content="https://github.com/nason, https://twitter.com/nasonosan, http://nason.us"><link rel=alternate href=https://nason.us/feed.xml type=application/rss+xml title="Michael Nason"><script>// HTTPS only
     var host = "nason.us";
     if ((host === window.location.host) && (window.location.protocol !== "https:"))
-        window.location.protocol = "https";</script><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel=stylesheet type=text/css><link rel=stylesheet href=/css/main.css><script src=/js/vendor/head.56c0d4a6.js data-headjs-load=/js/init.9cdfa083.js></script><!--[if lte IE 8]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]--></head><body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        window.location.protocol = "https";</script><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel=stylesheet type="text/css"><link rel=stylesheet href="/css/main.css"><script src=/js/vendor/head.56c0d4a6.js data-headjs-load=/js/init.03c2b362.js></script><!--[if lte IE 8]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]--></head><body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-44577443-1', 'nason.us');
   ga('require', 'displayfeatures');
-  ga('send', 'pageview');</script><div class=mobile-background></div><main id=post><section id=page-header><header><p>Blog</p><h1><a href=/ >Michael Nason</a></h1><p>Particles &amp; Waves</p><ul class=icons><li><a href=https://github.com/nason class=icon-git></a></li><li><a href=https://linkedin.com/in/michaelnason class=icon-linkedin></a></li><li><a href=/#contact class="icon-mail scroll"></a></li></ul></header></section><article class="container box style3"><header><h2><a href=/articles/upgrading-http-links-with-javascript/ >Upgrading http links</a></h2><p class=date><span>June 27, 2015</span></p></header><section><p><span class=caps>HTTPS</span> is no newcomer and continues to be increasingly important. With the <a href=https://letsencrypt.org/ >Let’s Encrypt</a> project, <span class=caps>HTTPS</span> should become ubiquitous (and that is<span class=widont>&nbsp;</span>awesome!).</p><p>I say should, because it’s up to content producers and publishers to take the effort to set it up on their server, and then responsibly link to others. <span class=more></p><p>Just as Let’s Encrypt will automate the creation and configuration of <span class=caps>SSL</span> certificates on servers, I want to be able to run my content through some kind of tool and replace any http links with https equivalents when<span class=widont>&nbsp;</span>possible.</p><p>I’m going to approach this from the context of this static site, but my goal here is to solve this problem in a general way and potentially publish it openly. And I’m going to document my process as I go<span class=widont>&nbsp;</span>along.</p><h3 id=research-phase-0->Research (Phase 0)</h3><p>What are the specific problems I’m trying to<span class=widont>&nbsp;</span>address?</p><blockquote><p>Upgrading all http links to https when<span class=widont>&nbsp;</span>possible.</p></blockquote><p>Are there any existing tools or samples of this being<span class=widont>&nbsp;</span>done?</p><blockquote><p><a href=https://github.com/classdojo/httpsify.js>httpsify</a> looks interesting. Its not actively maintained, but it might be a useful mechanism for detecting https<span class=widont>&nbsp;</span>support.</p><p>I don’t see any prior attempts at this from a few cursory searches on Google, GitHub, and <span class=caps>NPM</span>. I should look for other link-detection<span class=widont>&nbsp;</span>tools.</p></blockquote><p>Is this technically possible? What are some use<span class=widont>&nbsp;</span>cases?</p><blockquote><p>I think its technically possible. My initial naive thought-implementation is to scan all source files, map a location of all http links, try connecting to each via https, and replacing those that<span class=widont>&nbsp;</span>succeed.</p><p>Server-side: A <span class=caps>CLI</span> tool. A build task. Server middleware. Browserify or Babel transform. An external<span class=widont>&nbsp;</span>service?</p><p>Client-side: An external service? Probably not gonna go there for<span class=widont>&nbsp;</span>now.</p></blockquote><h3 id=design-phase-1->Design (Phase 1)</h3><p><span class=caps>OK</span>, enough with the self-interview. Now for some design specs. As a first attempt I’m going to imagine building this as a <span class=caps>CLI</span><span class=widont>&nbsp;</span>tool:</p><h4 id=configuration-options>Configuration/Options</h4><pre><code>-i path     A path to include
+  ga('send', 'pageview');</script><div class=mobile-background></div><main id=post><section id=page-header><header><p>Blog</p><h1><a href="/">Michael Nason</a></h1><p>Particles &amp; Waves</p><ul class=icons><li><a href=https://github.com/nason class=icon-git></a></li><li><a href=https://linkedin.com/in/michaelnason class=icon-linkedin></a></li><li><a href=/#contact class="icon-mail scroll"></a></li></ul></header></section><article class="container box style3"><header><h2><a href="/articles/upgrading-http-links-with-javascript/">Upgrading http links</a></h2><p class=date><span>June 27, 2015</span></p></header><section><p><span class=caps>HTTPS</span> is no newcomer and continues to be increasingly important. With the <a href="https://letsencrypt.org/">Let’s Encrypt</a> project, <span class=caps>HTTPS</span> should become ubiquitous (and that is&nbsp;awesome!).</p><p>I say should, because it’s up to content producers and publishers to take the effort to set it up on their server, and then responsibly link to others. <span class="more"></p><p>Just as Let’s Encrypt will automate the creation and configuration of <span class=caps>SSL</span> certificates on servers, I want to be able to run my content through some kind of tool and replace any http links with https equivalents when&nbsp;possible.</p><p>I’m going to approach this from the context of this static site, but my goal here is to solve this problem in a general way and potentially publish it openly. And I’m going to document my process as I go&nbsp;along.</p><h3 id=research-phase-0->Research (Phase 0)</h3><p>What are the specific problems I’m trying to&nbsp;address?</p><blockquote><p>Upgrading all http links to https when&nbsp;possible.</p></blockquote><p>Are there any existing tools or samples of this being&nbsp;done?</p><blockquote><p><a href=https://github.com/classdojo/httpsify.js>httpsify</a> looks interesting. Its not actively maintained, but it might be a useful mechanism for detecting https&nbsp;support.</p><p>I don’t see any prior attempts at this from a few cursory searches on Google, GitHub, and <span class=caps>NPM</span>. I should look for other link-detection&nbsp;tools.</p></blockquote><p>Is this technically possible? What are some use&nbsp;cases?</p><blockquote><p>I think its technically possible. My initial naive thought-implementation is to scan all source files, map a location of all http links, try connecting to each via https, and replacing those that&nbsp;succeed.</p><p>Server-side: A <span class=caps>CLI</span> tool. A build task. Server middleware. Browserify or Babel transform. An external&nbsp;service?</p><p>Client-side: An external service? Probably not gonna go there for&nbsp;now.</p></blockquote><h3 id=design-phase-1->Design (Phase 1)</h3><p><span class=caps>OK</span>, enough with the self-interview. Now for some design specs. As a first attempt I’m going to imagine building this as a <span class=caps>CLI</span>&nbsp;tool:</p><h4 id=configuration-options>Configuration/Options</h4><pre><code>-i path     A path to include
 -x path     A path to exclude
 -t timeout  Timeout in ms for each attempt [default: 2000ms]
 -r retries  Number of retries for each link [default: 2]
@@ -19,8 +19,8 @@ I say should, because it’s up to content producers and publishers to take the 
 --silent    Silence output
 --debug     Output debug info &amp; activity
 --verbose   Output an extended report
-</code></pre><h4 id=usage>Usage</h4><p>Scan all html files (recursively) in the src and contents folders, output an extended report, and don’t proceed to write to<span class=widont>&nbsp;</span>files:</p><pre><code>try-https -i ./src/**/*.html -i ./contents/**/*.html --verbose --dry-run
-</code></pre><h4 id=output>Output</h4><ul><li>If the <code>--dry-run</code> flag is <em>not</em> passed, included files will have upgradeable http links replaced in<span class=widont>&nbsp;</span>source.</li><li>If the <code>--silent</code> flag is passed, there will be no stdout<span class=widont>&nbsp;</span>activity.</li><li>If the <code>--verbose</code> flag is passed, a report will be logged to<span class=widont>&nbsp;</span>stdout.</li><li>If the <code>--debug</code> flag is passed, log<span class=widont>&nbsp;</span>activity.</li><li>If neither verbose or silent, minimal summary and status<span class=widont>&nbsp;</span>output.</li></ul><h4 id=testing>Testing</h4><p>Before I came up with the idea to do this, I manually updated many links on my site. I’ll create a test suite that compares the output of this tool to those files before and after my manual<span class=widont>&nbsp;</span>update.</p><h3 id=implementation-phase-2->Implementation (Phase 2)</h3><p>I’ll start by making a new folder and running <code>npm init</code>. This will generate a <code>package.json</code> file for<span class=widont>&nbsp;</span>us:</p><pre><code class=lang-json>{
+</code></pre><h4 id=usage>Usage</h4><p>Scan all html files (recursively) in the src and contents folders, output an extended report, and don’t proceed to write to&nbsp;files:</p><pre><code>try-https -i ./src/**/*.html -i ./contents/**/*.html --verbose --dry-run
+</code></pre><h4 id=output>Output</h4><ul><li>If the <code>--dry-run</code> flag is <em>not</em> passed, included files will have upgradeable http links replaced in&nbsp;source.</li><li>If the <code>--silent</code> flag is passed, there will be no stdout&nbsp;activity.</li><li>If the <code>--verbose</code> flag is passed, a report will be logged to&nbsp;stdout.</li><li>If the <code>--debug</code> flag is passed, log&nbsp;activity.</li><li>If neither verbose or silent, minimal summary and status&nbsp;output.</li></ul><h4 id=testing>Testing</h4><p>Before I came up with the idea to do this, I manually updated many links on my site. I’ll create a test suite that compares the output of this tool to those files before and after my manual&nbsp;update.</p><h3 id=implementation-phase-2->Implementation (Phase 2)</h3><p>I’ll start by making a new folder and running <code>npm init</code>. This will generate a <code>package.json</code> file for&nbsp;us:</p><pre><code class=lang-json>{
   "<span class=attribute>name</span>": <span class=value><span class=string>"try-https"</span></span>,
   "<span class=attribute>version</span>": <span class=value><span class=string>"0.0.1"</span></span>,
   "<span class=attribute>description</span>": <span class=value><span class=string>"Try to replace all http links with https equivalents"</span></span>,
@@ -28,9 +28,9 @@ I say should, because it’s up to content producers and publishers to take the 
   "<span class=attribute>author</span>": <span class=value><span class=string>"Mike Nason"</span></span>,
   "<span class=attribute>license</span>": <span class=value><span class=string>"<span class=caps>MIT</span>"</span>
 </span>}
-</code></pre><p>This seems like it might be an appropriate job for a <a href=https://nodejs.org/api/stream.html#stream_class_stream_transform_1>Transform Stream</a>, so next I’ll <code>touch sample.js</code> and get to<span class=widont>&nbsp;</span>experimenting.</p><p>Starting small with a Readable stream for one single file with a few<span class=widont>&nbsp;</span>links:</p><pre><code class=lang-javascript><span class=keyword>var</span> fs = <span class=built_in>require</span>(<span class=string>'fs'</span>)
+</code></pre><p>This seems like it might be an appropriate job for a <a href=https://nodejs.org/api/stream.html#stream_class_stream_transform_1>Transform Stream</a>, so next I’ll <code>touch sample.js</code> and get to&nbsp;experimenting.</p><p>Starting small with a Readable stream for one single file with a few&nbsp;links:</p><pre><code class=lang-javascript><span class=keyword>var</span> fs = <span class=built_in>require</span>(<span class=string>'fs'</span>)
 <span class=keyword>var</span> source = fs.createReadStream(<span class=string>'./test/sample/article1.md'</span>);
-</code></pre><p>And then creating a transform stream via <code>through2</code>, I was able to detect/output all links in one file and their line<span class=widont>&nbsp;</span>numbers:</p><pre><code class=lang-javascript><span class=pi>"use strict"</span>;
+</code></pre><p>And then creating a transform stream via <code>through2</code>, I was able to detect/output all links in one file and their line&nbsp;numbers:</p><pre><code class=lang-javascript><span class=pi>"use strict"</span>;
 
 <span class=keyword>const</span> testFile = <span class=string>'./test/sample/article1.md'</span>
 <span class=keyword>const</span> HTTP_LINK_DETECTOR = <span class=regexp>/(http:\/\/)([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/gi</span>
@@ -41,12 +41,12 @@ I say should, because it’s up to content producers and publishers to take the 
 
 <span class=keyword>const</span> HTTPSLinkTransformer = through2.ctor(
   { objectMode : <span class=literal>true</span> },
-  <span class=function><span class=keyword>function</span> (<span class=params>chunk, encoding, callback</span>) </span>{
+  <span class=function><span class=keyword>function</span> <span class=params>(chunk, encoding, callback)</span> {</span>
     <span class=keyword>var</span> data = chunk.toString();
     <span class=keyword>var</span> lines = data.split(<span class=string>'\n'</span>);
 
     <span class=comment>// For each line emit a tuple of: array of matched links, and source line number</span>
-    lines.map(<span class=function><span class=keyword>function</span> (<span class=params>line, i</span>) </span>{
+    lines.map(<span class=function><span class=keyword>function</span> <span class=params>(line, i)</span> {</span>
       <span class=keyword>this</span>.push([line.match(HTTP_LINK_DETECTOR), i])
     }, <span class=keyword>this</span>);
 
@@ -57,30 +57,30 @@ I say should, because it’s up to content producers and publishers to take the 
 <span class=keyword>let</span> parser = <span class=keyword>new</span> HTTPSLinkTransformer();
 <span class=keyword>let</span> linesWithLinks = [];
 
-<span class=built_in>console</span>.log(<span class=string>`Scanning <span class=subst>${testFile}</span> for links...`</span>);
+console.log(`Scanning ${testFile} <span class=keyword>for</span> links...`);
 
 source
   .pipe(parser)
-  .on(<span class=string>'data'</span>, <span class=function><span class=keyword>function</span> (<span class=params>data</span>) </span>{
+  .on(<span class=string>'data'</span>, <span class=function><span class=keyword>function</span> <span class=params>(data)</span> {</span>
     <span class=keyword>if</span> (data[<span class=number>0</span>]) {
       linesWithLinks.push(data)
     };
   })
-  .on(<span class=string>'end'</span>, <span class=function><span class=keyword>function</span> (<span class=params></span>) </span>{
+  .on(<span class=string>'end'</span>, <span class=function><span class=keyword>function</span> <span class=params>()</span> {</span>
     <span class=keyword>var</span> output = <span class=string>''</span>;
 
-    linesWithLinks.forEach(<span class=function><span class=keyword>function</span> (<span class=params>line</span>) </span>{
-      output += <span class=string>`
-      Line <span class=subst>${line[1]}</span>:
-      <span class=subst>${line[0].join(', ')}</span>
-      `</span>;
+    linesWithLinks.forEach(<span class=function><span class=keyword>function</span> <span class=params>(line)</span> {</span>
+      output += `
+      Line ${line[<span class=number>1</span>]}:
+      ${line[<span class=number>0</span>].join(<span class=string>', '</span>)}
+      `;
     });
 
-    <span class=built_in>console</span>.log(output);
+    console.log(output);
   });
-</code></pre><p>Now, lets give the <code>httpsify</code> module a<span class=widont>&nbsp;</span>shot:</p><pre><code class=lang-javascript><span class=function><span class=keyword>function</span> <span class=title>checkLinks</span>(<span class=params>linesToCheck</span>) </span>{
-  <span class=built_in>console</span>.log(<span class=string>'line#'</span>, <span class=string>'upgrade?'</span>, <span class=string>'output'</span>, <span class=string>'input'</span>);
-  linesToCheck.forEach(<span class=function><span class=keyword>function</span> (<span class=params>line</span>) </span>{
+</code></pre><p>Now, lets give the <code>httpsify</code> module a&nbsp;shot:</p><pre><code class=lang-javascript><span class=function><span class=keyword>function</span> <span class=title>checkLinks</span><span class=params>(linesToCheck)</span> {</span>
+  console.log(<span class=string>'line#'</span>, <span class=string>'upgrade?'</span>, <span class=string>'output'</span>, <span class=string>'input'</span>);
+  linesToCheck.forEach(<span class=function><span class=keyword>function</span> <span class=params>(line)</span> {</span>
     <span class=keyword>let</span> links = line.links;
     <span class=keyword>let</span> lineNo = line.lineNo;
 
@@ -88,15 +88,15 @@ source
       <span class=keyword>return</span>;
     }
 
-    links.forEach(<span class=function><span class=keyword>function</span> (<span class=params>link</span>) </span>{
+    links.forEach(<span class=function><span class=keyword>function</span> <span class=params>(link)</span> {</span>
       <span class=keyword>let</span> path = url.parse(link).path;
-      httpsify(path, link, <span class=function><span class=keyword>function</span>(<span class=params>url</span>) </span>{
-        <span class=built_in>console</span>.log(lineNo, url!==link, url, link);
+      httpsify(path, link, <span class=function><span class=keyword>function</span><span class=params>(url)</span> {</span>
+        console.log(lineNo, url!==link, url, link);
       });
     })
   })
 }
-</code></pre><p>If I call this function with <code>linesWithLinks</code> in the <code>end</code> phase, I get reasonable output<span class=widont>&nbsp;</span>back.</p><h2 id=-i-stepped-away-from-the-computer-for-a-few-hours-and-enjoyed-some-time-outside-with-the-company-of-friends-and-family-><em>I stepped away from the computer for a few hours and enjoyed some time outside with the company of friends and<span class=widont>&nbsp;</span>family.</em></h2><p><br>I had thought about this sample some more, and began tweaking and refactoring it. <code>sample.js</code> now looks like<span class=widont>&nbsp;</span>this:</p><pre><code class=lang-javascript><span class=pi>"use strict"</span>;
+</code></pre><p>If I call this function with <code>linesWithLinks</code> in the <code>end</code> phase, I get reasonable output&nbsp;back.</p><h2 id=-i-stepped-away-from-the-computer-for-a-few-hours-and-enjoyed-some-time-outside-with-the-company-of-friends-and-family-><em>I stepped away from the computer for a few hours and enjoyed some time outside with the company of friends and&nbsp;family.</em></h2><p><br>I had thought about this sample some more, and began tweaking and refactoring it. <code>sample.js</code> now looks like&nbsp;this:</p><pre><code class=lang-javascript><span class=pi>"use strict"</span>;
 
 <span class=keyword>const</span> TEST_FILE = <span class=string>'./test/sample/article1.md'</span>
 <span class=keyword>const</span> HTTP_LINK_DETECTOR = <span class=regexp>/(http:\/\/)([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/gi</span>
@@ -113,16 +113,16 @@ source
  * @return {Promise} - will resolve to the upgraded
  *                             or original url
  */</span>
-<span class=function><span class=keyword>function</span> <span class=title>checkLink</span>(<span class=params>link</span>) </span>{
+<span class=function><span class=keyword>function</span> <span class=title>checkLink</span><span class=params>(link)</span> {</span>
   <span class=keyword>if</span> (!link) {
-    <span class=keyword>return</span> <span class=built_in>Promise</span>.resolve();
+    <span class=keyword>return</span> Promise.resolve();
   }
 
-  <span class=keyword>return</span> <span class=keyword>new</span> <span class=built_in>Promise</span>(<span class=function><span class=keyword>function</span> (<span class=params>resolve, reject</span>) </span>{
+  <span class=keyword>return</span> <span class=keyword>new</span> Promise(<span class=function><span class=keyword>function</span> <span class=params>(resolve, reject)</span> {</span>
     <span class=keyword>var</span> timeout = makeTimeout(link, resolve);
     <span class=keyword>let</span> path = url.parse(link).path;
 
-    httpsify(path, link, <span class=function><span class=keyword>function</span> (<span class=params>url</span>) </span>{
+    httpsify(path, link, <span class=function><span class=keyword>function</span> <span class=params>(url)</span> {</span>
       clearTimeout(timeout);
       resolve(url);
     });
@@ -132,15 +132,15 @@ source
 <span class=comment>// This can be further optimized</span>
 checkLink = memoize(checkLink);
 
-<span class=function><span class=keyword>function</span> <span class=title>makeTimeout</span>(<span class=params>value, cb</span>) </span>{
-  <span class=keyword>return</span> setTimeout(<span class=function><span class=keyword>function</span> (<span class=params></span>) </span>{
-    <span class=built_in>console</span>.warn(<span class=string>'request timeout - resolving with original link'</span>, value);
+<span class=function><span class=keyword>function</span> <span class=title>makeTimeout</span><span class=params>(value, cb)</span> {</span>
+  <span class=keyword>return</span> setTimeout(<span class=function><span class=keyword>function</span> <span class=params>()</span> {</span>
+    console.warn(<span class=string>'request timeout - resolving with original link'</span>, value);
     cb(value);
   }, <span class=number>7</span> * <span class=number>1000</span>);
 }
 
-<span class=function><span class=keyword>function</span> <span class=title>handleError</span>(<span class=params>e</span>) </span>{
-  <span class=built_in>console</span>.error(<span class=string>'Something went wrong'</span>, e);
+<span class=function><span class=keyword>function</span> <span class=title>handleError</span><span class=params>(e)</span> {</span>
+  console.error(<span class=string>'Something went wrong'</span>, e);
 }
 
 
@@ -151,18 +151,18 @@ checkLink = memoize(checkLink);
  */</span>
 <span class=keyword>const</span> HTTPLinkDetector = through2.ctor(
   { objectMode : <span class=literal>true</span> },
-  <span class=function><span class=keyword>function</span> (<span class=params>chunk, encoding, callback</span>) </span>{
+  <span class=function><span class=keyword>function</span> <span class=params>(chunk, encoding, callback)</span> {</span>
     <span class=keyword>let</span> startTime = process.hrtime();
     <span class=keyword>let</span> data = chunk.toString();
 
     <span class=keyword>let</span> links = data.match(HTTP_LINK_DETECTOR);
 
     <span class=keyword>let</span> diffTime = process.hrtime(startTime);
-    <span class=built_in>console</span>.log(<span class=string>'link scan for %d seconds'</span>, diffTime[<span class=number>0</span>] + diffTime[<span class=number>1</span>] / <span class=number>1e9</span>);
+    console.log(<span class=string>'link scan for %d seconds'</span>, diffTime[<span class=number>0</span>] + diffTime[<span class=number>1</span>] / <span class=number>1e9</span>);
 
-    <span class=built_in>console</span>.info(<span class=string>'http links detected - '</span>, links.join(<span class=string>', '</span>))
+    console.info(<span class=string>'http links detected - '</span>, links.join(<span class=string>', '</span>))
 
-    links.forEach(<span class=function><span class=keyword>function</span>(<span class=params>link</span>) </span>{
+    links.forEach(<span class=function><span class=keyword>function</span><span class=params>(link)</span> {</span>
       <span class=keyword>this</span>.push(link);
     }, <span class=keyword>this</span>);
 
@@ -177,17 +177,17 @@ checkLink = memoize(checkLink);
  */</span>
 <span class=keyword>const</span> HTTPSLinkUpgrader = through2.ctor(
   { objectMode : <span class=literal>true</span> },
-  <span class=function><span class=keyword>function</span> (<span class=params>link, encoding, callback</span>) </span>{
+  <span class=function><span class=keyword>function</span> <span class=params>(link, encoding, callback)</span> {</span>
     <span class=keyword>let</span> _this = <span class=keyword>this</span>;
     <span class=keyword>let</span> startTime = process.hrtime();
 
     checkLink(link)
-      .then(<span class=function><span class=keyword>function</span> (<span class=params>url</span>) </span>{
+      .then(<span class=function><span class=keyword>function</span> <span class=params>(url)</span> {</span>
         _this.push(url);
       })
-      .then(<span class=function><span class=keyword>function</span> (<span class=params></span>) </span>{
+      .then(<span class=function><span class=keyword>function</span> <span class=params>()</span> {</span>
         <span class=keyword>let</span> diffTime = process.hrtime(startTime);
-        <span class=built_in>console</span>.log(<span class=string>'request for %d seconds'</span>, diffTime[<span class=number>0</span>] + diffTime[<span class=number>1</span>] / <span class=number>1e9</span>);
+        console.log(<span class=string>'request for %d seconds'</span>, diffTime[<span class=number>0</span>] + diffTime[<span class=number>1</span>] / <span class=number>1e9</span>);
 
         callback.call(_this, <span class=literal>null</span>);
       })
@@ -196,12 +196,12 @@ checkLink = memoize(checkLink);
 );
 
 <span class=comment>// Sample- Go!</span>
-(<span class=function><span class=keyword>function</span> (<span class=params></span>) </span>{
+(<span class=function><span class=keyword>function</span> <span class=params>()</span> {</span>
   <span class=keyword>const</span> fs = <span class=built_in>require</span>(<span class=string>'fs'</span>);
   <span class=keyword>const</span> source = fs.createReadStream(TEST_FILE);
 
   <span class=keyword>let</span> startTime = process.hrtime();
-  <span class=built_in>console</span>.log(<span class=string>`Scanning <span class=subst>${TEST_FILE}</span> for links...`</span>);
+  console.log(`Scanning ${TEST_FILE} <span class=keyword>for</span> links...`);
 
   <span class=keyword>let</span> scanner = <span class=keyword>new</span> HTTPLinkDetector();
   <span class=keyword>let</span> upgrader = <span class=keyword>new</span> HTTPSLinkUpgrader();
@@ -209,17 +209,17 @@ checkLink = memoize(checkLink);
   source
     .pipe(scanner)
     .pipe(upgrader)
-    .on(<span class=string>'data'</span>, <span class=function><span class=keyword>function</span> (<span class=params>data</span>) </span>{
-      <span class=built_in>console</span>.log(<span class=string>'decided - '</span>, data);
+    .on(<span class=string>'data'</span>, <span class=function><span class=keyword>function</span> <span class=params>(data)</span> {</span>
+      console.log(<span class=string>'decided - '</span>, data);
     })
-    .on(<span class=string>'end'</span>, <span class=function><span class=keyword>function</span> (<span class=params></span>) </span>{
+    .on(<span class=string>'end'</span>, <span class=function><span class=keyword>function</span> <span class=params>()</span> {</span>
       <span class=keyword>let</span> diffTime = process.hrtime(startTime);
-      <span class=built_in>console</span>.log(<span class=string>'processing completed in %d seconds'</span>, diffTime[<span class=number>0</span>] + diffTime[<span class=number>1</span>] / <span class=number>1e9</span>);
+      console.log(<span class=string>'processing completed in %d seconds'</span>, diffTime[<span class=number>0</span>] + diffTime[<span class=number>1</span>] / <span class=number>1e9</span>);
 
       process.exit();
     });
 })()
-</code></pre><p>and has output<span class=widont>&nbsp;</span>like:</p><pre><code>~/C/try-https ❯❯❯ node sample.js
+</code></pre><p>and has output&nbsp;like:</p><pre><code>~/C/try-https ❯❯❯ node sample.js
 Scanning ./test/sample/article1.md for links...
 link scan for 0.000082373 seconds
 http links detected -  http://getbootstrap.com/getting-started/, http://www.visualstager.com/example/path, http://github.com/nason/bridgely, http://raw.github.com/nason/bridgely/master/screenshots/welcome.png, http://raw.github.com/nason/bridgely/master/screenshots/send_question.png, http://raw.github.com/nason/bridgely/master/screenshots/company_settings.png, http://github.com/nason.bridgely-api, http://github.com/nason/bridgely-api, http://github.com/nason/bridgely, http://github.com/nason/bridgely, http://nason.us/
@@ -247,7 +247,7 @@ request for 0.000060894 seconds
 decided -  https://nason.us/
 request for 0.567092333 seconds
 processing completed in 11.645916292 seconds
-</code></pre><p>And we’re off! This is a<span class=widont>&nbsp;</span>start.</p><p>It does not come remotely close to the stated design, but I have some more confidence in the idea now. I’m going to sleep on it and see how I feel<span class=widont>&nbsp;</span>tomorrow…</p></section><footer><div id=disqus_thread></div><script type=text/javascript>var disqus_shortname = 'nason';
+</code></pre><p>And we’re off! This is a&nbsp;start.</p><p>It does not come remotely close to the stated design, but I have some more confidence in the idea now. I’m going to sleep on it and see how I feel&nbsp;tomorrow…</p></section><footer><div id=disqus_thread></div><script type=text/javascript>var disqus_shortname = 'nason';
     var disqus_identifier = '/articles/upgrading-http-links-with-javascript/';
     var disqus_title = 'Upgrading http links';
     var disqus_url = 'https://nason.us//articles/upgrading-http-links-with-javascript/';
@@ -256,4 +256,4 @@ processing completed in 11.645916292 seconds
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();</script><noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></footer></article><article class="container box style2"><header><h2><a href=/blog/ >&larr; Return to Blog</a></h2></header></article><footer id=footer><div class=article-footer-bg-overlay><section class="about container"><p>Thank you for visiting my site. I hope you enjoyed your stay. This static site is built using open-source tools, and I have published its source publicly on <a href=https://github.com/nason/nason.github.io/tree/source>GitHub</a>.</p><p>I build software with Node.js, JavaScript, Backbone, <span class=caps>HTML5</span>, <span class=caps>CSS3</span>, Ruby on Rails and many others. Previously, I founded Zip Eyewear. <a href=/about/ >More about<span class=widont>&nbsp;</span>me→</a></p></section><section class=copyright><ul class=menu><li><span xmlns:dct=http://purl.org/dc/terms/ property=dct:title>Particles & Waves</span> by <a xmlns:cc=http://creativecommons.org/ns# href=http://nason.us property=cc:attributionName rel=cc:attributionURL>Michael Nason</a> is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/ >Creative Commons Attribution-ShareAlike 4.0 International License</a></li><li>Generated with <a href=http://wintersmith.io/ >Wintersmith</a></li><li>Design forked from Overflow by <a href=http://html5up.net/ >HTML5 UP</a></li></ul><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/ ><img alt="Creative Commons License" style=border-width:0 src=/images/cc_4_88x31.35987e13.png></a></section></div></footer></main></body></html>
+      })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></footer></article><article class="container box style2"><header><h2><a href="/blog/">&larr; Return to Blog</a></h2></header></article><footer id=footer><div class=article-footer-bg-overlay><section class="about container"><p>Thank you for visiting my site. I hope you enjoyed your stay. This static site is built using open-source tools, and I have published its source publicly on <a href=https://github.com/nason/nason.github.io/tree/source>GitHub</a>.</p><p>I build software with Node.js, JavaScript, Backbone, <span class=caps>HTML5</span>, <span class=caps>CSS3</span>, Ruby on Rails and many others. Previously, I founded Zip Eyewear. <a href="/about/">More about&nbsp;me→</a></p></section><section class=copyright><ul class=menu><li><span xmlns:dct="http://purl.org/dc/terms/" property=dct:title>Particles & Waves</span> by <a xmlns:cc=http://creativecommons.org/ns# href=http://nason.us property=cc:attributionName rel=cc:attributionURL>Michael Nason</a> is licensed under a <a rel=license href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a></li><li>Generated with <a href="http://wintersmith.io/">Wintersmith</a></li><li>Design forked from Overflow by <a href="http://html5up.net/">HTML5 UP</a></li></ul><a rel=license href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style=border-width:0 src="/images/cc_4_88x31.35987e13.png"></a></section></div></footer></main></body></html>
